@@ -1,0 +1,85 @@
+<template>
+    <div>
+<h1>ຫນ້າຟັງຊັນ</h1>
+<v-card height="550" >
+
+<v-card-title>ຈັດການຫນ້າຟັງຊັ້ນ</v-card-title> 
+
+
+   <v-card-text  class="py-10 px-5">
+<form @submit.prevent="submit">
+
+    <label for="" class="font-weight-black">ຫົວຂໍ້</label>
+    <v-select
+
+label="Select"
+></v-select>
+
+<label for="" class="font-weight-black">ຊື່ຫນ້າ</label>
+    <v-text-field
+      label="Name"
+    ></v-text-field>
+
+    <label for="" class="font-weight-black">ຊື່ໄຟຣ</label>
+    <v-text-field
+
+      label="E-mail"
+    ></v-text-field>
+
+
+
+    <div class="d-flex justify-end px-10 py-10">
+<v-btn rounded
+type="submit"
+color="blue" >
+ສ້າງພະເເນກ
+</v-btn>
+</div>
+
+  </form>
+</v-card-text>
+
+</v-card>
+   </div>
+
+   <v-table density="compact" height="auto" class="mt-15">
+    <thead>
+      <tr>
+        <th class="text-left">
+          ເລກລຳດັບ
+        </th>
+        <th class="text-left">
+          ຊື່ຫນ້າ
+        </th>
+        <th class="text-left">
+         ຊື່ໄຟຣ
+        </th>
+        <th class="text-left">
+        ຫົວຂໍ້
+        </th>
+        <th class="text-left">
+
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        v-for="item in desserts"
+        :key="item.name"
+      >
+        <td>{{ item.name }}</td>
+        <td>{{ item.calories }}</td>
+        <td>{{ item.calories }}</td>
+      </tr>
+    </tbody>
+  </v-table>
+
+</template>
+
+<script setup>
+
+</script>
+
+<style lang="scss" scoped>
+
+</style>
