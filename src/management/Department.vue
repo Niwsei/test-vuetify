@@ -71,7 +71,7 @@
                         <v-row>
                           <v-col cols="12">
                             <v-text-field
-                            v-model="editedItem.name"
+                            v-model="item.name"
                               required
                             ></v-text-field>
                           </v-col>
@@ -145,11 +145,11 @@ export default {
 
   data() {
     return {
-      dessert: {
+      dessert: [{
         number: "0",
         name: "siyon",
         
-      },
+      }],
       defaultdessert:[
         {
         name: "",
