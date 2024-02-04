@@ -1,7 +1,7 @@
 <template>
     <VApp id="inspire">
         
-        <VNavigationDrawer v-model="drawer" class="bg-pink lighten-5">
+        <VNavigationDrawer  v-model="drawer" class="bg-pink lighten-5">
         <!--  -->
    <VList class="justify-center align-content-center text-center pt-5">
     <VListItem title="SCN NF" prepend-avatar="https://png.pngtree.com/png-clipart/20190116/ourmid/pngtree-hand-painted-dolphins-cartoon-dolphin-q-version-of-dolphin-lovely-png-image_387165.jpg"></VListItem>
@@ -122,7 +122,7 @@
    
         </VNavigationDrawer>
 
-        <VAppBar class="pt-3">
+        <VAppBar elevation="0" class="pt-3 bg-grey-lighten-5 border-bottom">
             <VAppBarNavIcon @click="drawer = !drawer"></VAppBarNavIcon>
             <VAppBarTitle>Application</VAppBarTitle>
             <v-spacer></v-spacer>

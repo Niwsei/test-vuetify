@@ -1,5 +1,5 @@
 <template>
-<sidebar_navbar style="background-color: #aaa;"/>
+<sidebar_navbar style="background-color: #ECEFF1;"/>
 </template>
 
 <script setup>

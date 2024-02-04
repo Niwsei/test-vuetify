@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- card -->
-    <v-card height="300">
+    <v-card height="300" elevation="0">
       <v-card-title>
         <h3 class="font-weight-regular mt-5 ml-5">ສ້າງພະເເນກ</h3>
       </v-card-title>
@@ -22,7 +22,7 @@
               text="submit"
               type="submit"
               size="large"
-              class="text-blue-blue-grey-lighten-5"
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
               color="deep-orange-accent-3"
             >
               ສ້າງພະເເນກ
@@ -33,7 +33,7 @@
     </v-card>
 
     <!-- table -->
-    <v-card height="auto" class="mt-15 ">
+    <v-card height="auto" class="mt-15 " elevation="0">
       <v-container>
     <v-table class="mt-15 border border-left-0 border-right-none" theme="">
       <thead>
@@ -47,7 +47,7 @@
 
       <tbody>
         <tr v-for="(item, index) in dessert" :key="index">
-          <td>{{ item.number }}</td>
+          <td>{{ index }}</td>
           <td>{{ item.name }}</td>
           <td>
             <v-menu>
@@ -57,43 +57,61 @@
                 </v-btn>
               </template>
 
-              <v-list>
-                <v-dialog  v-model="dialog" persistent width="1024">
+              <v-list class="d-flex flex-column" width="150px">
+                <v-dialog  v-model="dialog" persistent height="auto" width="700">
                   <template v-slot:activator="{ props }">
-                    <v-btn flat v-bind="props"  @click="editItem(index)"> ເເກ້ໄຂ </v-btn>
+                    <v-btn class="w-100" flat v-bind="props"> ເເກ້ໄຂ </v-btn>
                   </template>
                   <v-card>
-                    <v-card-title>
-                      <span class="text-h5">User Profile</span>
-                    </v-card-title>
-                    <v-card-text>
-                      <v-container>
-                        <v-row>
-                          <v-col cols="12">
-                            <v-text-field
+                    <v-container>
+                    <v-row>
+                      <v-col cols="4">
+                      <h2 class=" font-italic text-blue-grey-lighten-3"  >ຂົນສົ່ງ</h2>
+                    </v-col>
+                    <v-spacer></v-spacer>
+                    <v-col cols="4" class="text-end">
+                    <v-btn variant @click="close">Close</v-btn>
+                  </v-col>
+                  </v-row>
+                  
+                  <v-row>
+                    <v-col cols="11" class="mt-5"  >
+                      <h1 class=" font-italic text-blue-grey-lighten-3">ຊື່ພະເເນກ</h1>
+                            <v-text-field 
+                            class="border border-1"
+                           variant
                             v-model="item.name"
+                            density="compact"
+                            hide-details
                               required
                             ></v-text-field>
-                          </v-col>
-                        </v-row>
-                      </v-container>
-                      <small>*indicates required field</small>
-                    </v-card-text>
-                    <v-card-actions>
+                  </v-col>
+                  </v-row>
+
+
+
+
+                  <v-row >
+                    <v-col cols="12">
+                    <v-card-actions class="text-end d-flex justify-end align-end">
                       <v-btn
-                        color="blue-darken-1"
-                        variant="text"
-                        @click="close"
+                        type="submit"
+                        size="large"
+                        class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
+                        color="deep-orange-accent-3"
                       >
-                        ເເກ
+                        ເເກ້ໄຂ
                       </v-btn>
                     </v-card-actions>
+                  </v-col>
+                  </v-row>
+                </v-container>
                   </v-card>
                 </v-dialog>
 
                 <!-- <v-list-item> ລືບ </v-list-item> -->
 
-                <v-dialog v-model="dialogs" persistent width="1024">
+                <v-dialog v-model="dialogDelete" persistent width="1024">
                   <template v-slot:activator="{ props }">
                     <v-btn flat v-bind="props">
                       ລືບ
@@ -120,7 +138,7 @@
                       <v-btn
                         color="blue-darken-1"
                         variant="text"
-                        @click="dialog = false"
+                        
                       >
                         Save
                       </v-btn>
@@ -145,27 +163,25 @@ export default {
 
   data() {
     return {
-      dessert: [{
-        number: "0",
+      dessert: [
+        {
         name: "siyon",
         
-      }],
-      defaultdessert:[
-        {
-        name: "",
-        lname: "",
-       
+      },
+      {
+        name: "siyon",
+        
       },
     ],
+     
 
-      editedItem: {
-      name: "", // สามารถกำหนดค่าเริ่มต้นที่ต้องการแสดงในฟอร์ม
-    },
+  
 
       dialog: false,
+      dialogDelete: false,
       
       
-      editedIndex: -1,
+     
 
       forms: {
         name: "",
@@ -194,11 +210,7 @@ export default {
         })
       },
 
-      editItem(index) {
-  this.editedIndex = index;
-  this.editedItem = Object.assign({}, this.forms[index]);
-  this.dialog = true; // เปิด v-dialog
-},
+ 
   },
 };
 </script>
