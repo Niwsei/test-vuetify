@@ -2,7 +2,7 @@
   <div>
     <h1>ລົງທະບຽນຂໍ້ມູນລູກຄ້າ</h1>
 
-    <v-card height="1200px">
+    <v-card height="auto" elevation="0">
       <v-form>
         <v-container>
           <v-row>
@@ -35,26 +35,55 @@
               <v-row>
             <v-col cols="3">
               <h4>ຊື່</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field
+               type="text"
+                flat 
+                variant
+                density="compact"
+                hide-details
+                class="border"
+                ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ນາມສະກຸນ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field 
+              type="text"
+               flat
+               variant
+                density="compact"
+                hide-details
+                class="border"
+                ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ເພດ</h4>
-              <v-radio-group class="d-flex  flex-row bg-primary">
-                <v-radio label="" ></v-radio>
-                <v-radio label=""></v-radio>
+              <v-radio-group inline>
+                <v-radio value="ຊາຍ" >
+                  <template v-slot:label>
+                 <strong class="text-black">ຊາຍ</strong>
+                </template>
+                </v-radio>
+                <v-radio value="ຍິງ">
+                  <template v-slot:label>
+                 <strong class="text-black">ຍິງ</strong>
+                </template>
+                </v-radio>
 
               </v-radio-group>
             </v-col>
 
             <v-col cols="3">
               <h4>ດ/ວ/ປ ເກີດ</h4>
-              <v-text-field type="date" flat variant="outlined"></v-text-field>
+              <v-text-field 
+              type="date"
+               flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -62,22 +91,44 @@
           <v-row>
             <v-col cols="2">
               <h4>ອາຍຸ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field
+               type="text" 
+              flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ສັນຊາດ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ເບີໂທ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ເບີວອດເເອັບ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
           </v-row>
@@ -87,12 +138,22 @@
           <v-row>
             <v-col cols="3">
               <h4>ອາຊີບ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ສະຖານທີ່ເຮັດວຽກ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
@@ -107,7 +168,12 @@
 
             <v-col cols="3">
               <h4>ເວລາພັກອາໄສ(ອາໄສຢູ່ມາໃດ)</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
           </v-row>
@@ -144,17 +210,32 @@
           <v-row>
             <v-col cols="2">
               <h4>ໜ່ວຍ:</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ເຮືອນເລກທີ:</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ບ້ານ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="2">
@@ -180,17 +261,32 @@
           <v-row>
             <v-col cols="2">
               <h4>ເລກບັດປະຈຳຕົວ:</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ວັນທີ່ອອກບັດປະຈຳຕົວ</h4>
-              <v-text-field type="date" flat variant="outlined"></v-text-field>
+              <v-text-field type="date" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
-            <v-col cols="2">
+            <v-col cols="3">
               <h4>ວັນທີ່ໝົດອາຍຸບັດປະຈຳຕົວ</h4>
-              <v-text-field type="date" flat variant="outlined"></v-text-field>
+              <v-text-field type="date" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="2">
@@ -228,17 +324,32 @@
           <v-row>
             <v-col cols="3">
               <h4>ເລກປື້ມສຳມະໂນຄົວ:</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ວັນທີ່ອອກສຳມະໂນຄົວ</h4>
-              <v-text-field type="text" flat variant="outlined"></v-text-field>
+              <v-text-field type="text" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ວັນທີ່ໝົດອາຍຸສຳມະໂນຄົວ</h4>
-              <v-text-field type="date" flat variant="outlined"></v-text-field>
+              <v-text-field type="date" flat 
+              variant
+                density="compact"
+                hide-details
+                class="border"
+              ></v-text-field>
             </v-col>
           </v-row>
 
@@ -273,7 +384,7 @@
 
 
     <h3 class="mt-15">ລາຍການຂໍ້ມູນລູກຄ້າ:</h3>
-    <v-card height="auto">
+    <v-card height="auto" elevation="0">
 
 
 

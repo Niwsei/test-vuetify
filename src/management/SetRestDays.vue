@@ -1,102 +1,80 @@
 <template>
     <div>
-<h1>ກຳນົດວັນພັກ</h1>
-
-
     <v-row no-gutters>
       <v-col
-     class="mr-10"
-        cols="12"
-        sm="4"
+     class="pl-5"
+        cols="5"
       >
-      <v-card height="500" >
+      <v-card height="auto" elevation="0">
+<v-container>
+<v-row>
+  <v-col>
+<p class="font-weight-black">ປະເພດວັນພັກ</p> 
+      <v-select label="ສ້າງສິດ" variant="outlined" hide-details density="compact" :items="date" class="mt-3" ></v-select>
+    </v-col>
+    </v-row>
 
-<v-card-item>
-<label for="">ເລຶອກສິດນຳໃຊ້</label> 
-      <v-select label="ສ້າງສິດ" variant="outlined" :items="date"></v-select>
-    </v-card-item>
 
-
-    <v-card-item>
-<label for="" class="font-weight-black">ສິດເຂົ້າເຖິງ</label>
+    <v-row >
+  <v-col>
+<p class="font-weight-black">ຊື່ວັນພັກ</p>
 <v-text-field 
-variant="outlined"
-            label="First name"
+class="border mt-3"
+variant 
+hide-details 
+density="compact"
             required
-            hide-details
           ></v-text-field>
-        </v-card-item>
+        </v-col>
+    </v-row>
 
-        <v-card-item>
-        <v-menu
-          ref="menu1"
-          v-model="menu1"
-          :close-on-content-click="false"
-          :nudge-right="40"
-          lazy
-          transition="scale-transition"
-          offset-y
-          full-width
-          max-width="290px"
-          min-width="290px"
-        >
-          <template v-slot:activator="{ on }">
-            <v-text-field
-              v-model="dateFormatted"
-              label="Date"
-              hint="MM/DD/YYYY format"
-              persistent-hint
-              prepend-icon="event"
-              @blur="date = parseDate(dateFormatted)"
-              v-on="on"
-            ></v-text-field>
-          </template>
-          <v-date-picker v-model="date" no-title @input="menu1 = false"></v-date-picker>
-        </v-menu>
-        <!-- <p>Date in ISO format: <strong>{{ date }}</strong></p> -->
-
-        </v-card-item>
+    <v-row>
+  <v-col>
+    <p class="font-weight-black">ວັນທີ່ກຳນົດພັກ(ດ-ວ-ປ)</p>
+ <v-text-field 
+ type="date"
+ class="border mt-3"
+variant 
+hide-details 
+density="compact"
+ ></v-text-field>
+  </v-col>
+    </v-row>
 
 
-<div class="d-flex justify-end px-10 py-10">
-<v-btn rounded
-color="blue" >
+<div class=" py-5">
+<v-btn 
+class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
+size="large"
+>
 ສ້າງພະເເນກ
 </v-btn>
 </div>
-
+</v-container>
 </v-card>
       </v-col>
 
-
-
-
-
-
-
       <v-col
-        cols="12"
-        sm="7"
+      class="pl-15"
+        cols="7"
       >
       <v-card height="650" >
-        
-      
-      <v-table density="compact" height="auto" class=" pt-5">
+      <v-table  height="auto" class=" pt-5">
     <thead>
       <tr>
-        <th class="text-left">
+        <th class="text-left font-weight-black">
           ລຳດັບ
         </th>
-        <th class="text-left">
+        <th class="text-left  font-weight-black">
           ໝວດໝູ່ວັນພັກ
         </th>
-        <th class="text-left">
+        <th class="text-left font-weight-black">
           ຊື່ວັນພັກ
         </th>
-        <th class="text-left">
+        <th class="text-left font-weight-black">
           ວັນທີ່ພັກ
         </th>
-        <th class="text-left">
+        <th class="text-left font-weight-black">
           ລົບ
         </th>
 

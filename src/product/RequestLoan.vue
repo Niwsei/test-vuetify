@@ -2,36 +2,38 @@
     <div>
 <h1>ຂໍປ່ອຍກູ້</h1>
 
-<v-card>
+<v-card height="auto" elevation="0">
     <v-card-title class=" d-flex align-center pe-2">
 
-
+      <v-row class="d-flex justify-center mt-5">
+          <v-col cols="8">
+            <h3 class="d-flex justify-center"><v-icon>mdi-magnify</v-icon>ຄົ້ນຫາຂໍ້ມູນລູກຄ້າ</h3>
 <v-text-field
     v-model="search"
     prepend-inner-icon="mdi-magnify"
-    density="compact"
     label="Search"
-    single-line
     flat
-    hide-details
-    variant="solo-filled"
+    variant="outlined"
   ></v-text-field>
-</v-card-title>
+      </v-col>
+        </v-row>
+</v-card-title>       
 
+<hr color="#ECEFF1">
 
   <v-table density="compact" height="auto" class="mt-15">
     <thead>
       <tr>
-        <th class="text-left">ຮູບ</th>
-        <th class="text-left">ຊື່ລູກຄ້າ</th>
-        <th class="text-left">ອາຍຸ</th>
-        <th class="text-left">ເບີໂທ</th>
-        <th class="text-left">ເບີວອດແອັບ</th>
-        <th class="text-left">ບ້ານ</th>
-        <th class="text-left">ເມືອງ </th>
-        <th class="text-left">ເເຂວງ</th>
-        <th class="text-left">ເລກບັດປະຈຳຕົວ</th>
-        <th class="text-left">ຂໍປ່ອຍກູ້ </th>
+        <th class="text-left font-weight-black">ຮູບ</th>
+        <th class="text-left font-weight-black">ຊື່ລູກຄ້າ</th>
+        <th class="text-left font-weight-black">ອາຍຸ</th>
+        <th class="text-left font-weight-black">ເບີໂທ</th>
+        <th class="text-left font-weight-black">ເບີວອດແອັບ</th>
+        <th class="text-left font-weight-black">ບ້ານ</th>
+        <th class="text-left font-weight-black">ເມືອງ </th>
+        <th class="text-left font-weight-black">ເເຂວງ</th>
+        <th class="text-left font-weight-black">ເລກບັດປະຈຳຕົວ</th>
+        <th class="text-left font-weight-black">ຂໍປ່ອຍກູ້ </th>
       </tr>
     </thead>
     <tbody>

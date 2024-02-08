@@ -1,45 +1,33 @@
 <template>
     <div>
 <h1>ຮັບລູກຄ້າ</h1>
-<v-card class="pt-10" flat>
-    <v-card-title class=" d-flex align-center pe-2">
-
-    <v-spacer></v-spacer>
+<v-card height="auto" flat>
+    <v-card-title class=" d-flex justify-end pr-15 py-5">
+      <v-sheet class="w-25">
     <v-text-field
+    class="border"
+    color="red"
         v-model="search"
         prepend-inner-icon="mdi-magnify"
-        density="compact"
-        label="Search"
+        density="comfortable"
+        label="Search..."
         single-line
-        flat
         hide-details
-        variant="solo-filled"
+        variant
       ></v-text-field>
+    </v-sheet>
      </v-card-title>
 
-
+<hr color="#ECEFF1">
 
     
 <v-data-table
-    v-model:page="page"
+
     :headers="headers"
     :items="desserts"
     :items-per-page="itemsPerPage"
-  >
-    <template v-slot:top>
-      <v-text-field
-        :model-value="itemsPerPage"
-        class="pa-2"
-        hide-details
-        label="Items per page"
-        min="-1"
-        max="15"
-        type="number"
-        @update:model-value="itemsPerPage = parseInt($event, 10)"
-      ></v-text-field>
-    </template>
 
-    
+  > 
     <template v-slot:item.print="{ item } ">
       <v-btn color="primary"
         v-model="item.print"
@@ -66,17 +54,14 @@
 export default {
     data () {
       return {
-        page: 1,
-        itemsPerPage: 5,
         headers: [
           {
             align: 'start',
-            key: 'name',
+            key: 'ຮູບ',
             sortable: false,
-            title: ' ລ/ດ',
+            title: 'ຮູບ',
           },
-          { title: 'ຮູບ', key: 'ຮູບ' },
-          { title: 'ຊື່ລູກຄ້າ', key: 'ຊື່ລູກຄ້າ' },
+          { title: 'ຊື່ລູກຄ້າ', key: 'ຊື່ລູກຄ້າ', divider: true ,sortable: true , class: "blue lighten-5"},
           { title: 'ອາຍຸ ', key: 'ອາຍຸ' },
           { title: 'ເບີໂທ ', key: 'ເບີໂທ' },
           { title: 'ເບີວອດແອັບ ', key: 'ເບີວອດແອັບ' },
@@ -139,24 +124,14 @@ export default {
             ເລກບັດປະຈຳຕົວ: 1,
             ເລກປື້ມສຳມະໂນຄົວ: 1,
             print:"summit"
-          },
-          {
-            ຮູບ: 'Frozen Yogurt',
-            ຊື່ລູກຄ້າ: 159,
-            ອາຍຸ: 6.0,
-            ເບີໂທ: 24,
-            ເບີວອດແອັບ: 4.0,
-            ບ້ານ: 1,
-            ເມືອງ: 1,
-            ເເຂວງ: 1,
-            ເລກບັດປະຈຳຕົວ: 1,
-            ເລກປື້ມສຳມະໂນຄົວ: 1,
-            print:"summit"
-          },
-          
-
-          
+          },         
         ],
+
+//         headerProps: {
+//   color: 'primary', // กำหนดสีสำหรับ headers เป็น primary color
+//   class: 'custom-header-class' // กำหนด class สำหรับ headers
+//   // สามารถกำหนด properties อื่น ๆ ตามต้องการได้
+// }
       }
     },
     computed: {
@@ -167,6 +142,9 @@ export default {
   }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+.v-data-table-header th {
+  background-color: blue;
+  color: white;
+}
 </style>

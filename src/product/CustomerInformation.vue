@@ -3,21 +3,23 @@
 <h1>ຂໍ້ມູນລູກຄ້າ</h1>
 
 
-<v-card class="pt-10" flat>
-    <v-card-title class=" d-flex align-center pe-2">
-
-    <v-spacer></v-spacer>
+<v-card flat>
+  <v-container>
+    <v-row class="d-flex justify-end mb-5">
+    <v-col cols="3">
     <v-text-field
         v-model="search"
+        class="border"
         prepend-inner-icon="mdi-magnify"
+        variant
         density="compact"
-        label="Search"
+        label="Search..."
         single-line
         flat
         hide-details
-        variant="solo-filled"
       ></v-text-field>
-     </v-card-title>
+    </v-col>
+     </v-row>
 
 
 
@@ -43,7 +45,8 @@
 
     
     <template v-slot:item.print="{ item } ">
-      <v-btn color="primary"
+      <v-btn  class="pb-8 pt-4 my-4 bg-green-accent-3 text-grey-lighten-5" 
+      elevation="0"
         v-model="item.print"
         readonly
       >ລາຍລະອຽດ</v-btn>
@@ -58,6 +61,7 @@
       </div>
     </template>
   </v-data-table>
+</v-container>
 </v-card>
    </div>
 </template>

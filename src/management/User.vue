@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <v-card height="auto">
+    <v-card height="auto" elevation="0" >
       <v-card-title ><h3 class="font-weight-regular mt-5 ml-5">ສ້າງຜູ້ໃຊ້</h3></v-card-title>
 
       <v-card-text class="py-10 px-5">
@@ -55,11 +55,13 @@
     </v-card>
   </div>
 
-  <v-card class="mt-15">
+  <v-card class="mt-15" elevation="0">
     <v-container>
-      <v-sheet class="d-flex justify-end  align-end">
-      <v-text-field type="search" width="25px"></v-text-field>
-    </v-sheet>
+    <v-row class="d-flex justify-end">
+      <v-col cols="3">
+      <v-text-field type="search" variant="outlined" label="search..."></v-text-field>
+  </v-col>
+  </v-row>
   <v-table density="compact" height="auto" class="mt-15">
     <thead>
       <tr>

@@ -3,29 +3,29 @@
 <h1>ກວດສອບຊັບສິນລູກຄ້າ</h1>
 
 <v-card>
+  <v-card-title class=" d-flex justify-end pr-15 py-5">
+      <v-sheet class="w-25">
+    <v-text-field
+    class="border"
+    color="red"
+        v-model="search"
+        prepend-inner-icon="mdi-magnify"
+        density="comfortable"
+        label="Search..."
+        single-line
+        hide-details
+        variant
+      ></v-text-field>
+    </v-sheet>
+     </v-card-title>
 
+<hr color="#ECEFF1">
 
-    <v-card-title class=" d-flex align-center pe-2">
-
-<v-spacer></v-spacer>
-<v-text-field
-    v-model="search"
-    prepend-inner-icon="mdi-magnify"
-    density="compact"
-    label="Search"
-    single-line
-    flat
-    hide-details
-    variant="solo-filled"
-  ></v-text-field>
- </v-card-title>
-
- <v-card-text>
+ 
             <v-data-table
+            elevation="0"
               :headers="headers"
               :items="displayedGroups"
-              :items-per-page="itemsPerPage"
-              class="elevation-1"
             >
 
               <template v-slot:item="{ item }">
@@ -46,7 +46,6 @@
                 </tr>
               </template>
             </v-data-table>
-          </v-card-text>
 
           <v-card-actions class="d-flex justify-center">
             <v-btn @click="previousPage" :disabled="currentPage === 1">
