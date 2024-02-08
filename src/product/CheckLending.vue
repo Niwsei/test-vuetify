@@ -1,7 +1,7 @@
 <template>
     <div>
 <h1>ກວດສອບການປ່ອຍກູ້</h1>
-<v-card height="auto">
+<v-card height="auto" elevation="0"> 
 
    <v-row class="mt-2 ml-5">
     <v-col cols="3">

@@ -19,6 +19,7 @@
           <div class="d-flex justify-end px-10 py-10">
             <v-btn
               rounded
+              elevation="0"
               text="submit"
               type="submit"
               size="large"

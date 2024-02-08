@@ -70,7 +70,6 @@
                  <strong class="text-black">ຍິງ</strong>
                 </template>
                 </v-radio>
-
               </v-radio-group>
             </v-col>
 
@@ -78,7 +77,6 @@
               <h4>ດ/ວ/ປ ເກີດ</h4>
               <v-text-field 
               type="date"
-               flat 
               variant
                 density="compact"
                 hide-details
@@ -160,9 +158,11 @@
               <h4>ປະເພດທີ່ພັກອາໄສ</h4>
               <v-select
               :items="live"
-              variant="outlined"
+              class="border rounded"
+              density="compact"
+              hide-details
+              variant
               v-model="lived"
-              
               > </v-select>
             </v-col>
 
@@ -185,17 +185,22 @@
               <h4>ປະເພດເວລາ</h4>
               <v-select
               :items="time"
-              variant="outlined"
+              class="border rounded"
+              density="compact"
+              hide-details
+              variant
               v-model="timed"
-              
               > </v-select>
             </v-col>
 
             <v-col cols="3">
               <h4>ສະຖານະຄວາມເປັນເຈົ້າຂອງ</h4>
               <v-select
+              class="border rounded"
+              density="compact"
+              hide-details
+              variant
               :items="status"
-              variant="outlined"
               v-model="statused"
               
               > </v-select>
@@ -241,8 +246,11 @@
             <v-col cols="2">
               <h4>ເເຂວງ</h4>
               <v-select
+              class="border rounded"
+              density="compact"
+              hide-details
+              variant
               :items="city"
-              variant="outlined"
               v-model="cityed"
               
               > </v-select>
@@ -250,7 +258,10 @@
 
             <v-col cols="2">
               <h4>ເມືອງ</h4>
-              <v-select variant="outlined"> </v-select>
+              <v-select  class="border rounded"
+              density="compact"
+              hide-details
+              variant> </v-select>
             </v-col>
 
           </v-row>

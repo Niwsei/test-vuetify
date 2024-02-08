@@ -3,7 +3,7 @@
 <h1>ຂໍ້ມູນລູກຄ້າ</h1>
 
 
-<v-card flat>
+<v-card  elevation="0">
   <v-container>
     <v-row class="d-flex justify-end mb-5">
     <v-col cols="3">

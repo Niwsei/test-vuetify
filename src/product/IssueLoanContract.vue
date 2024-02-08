@@ -1,7 +1,7 @@
 <template>
     <div>
 <h1>ອອກສັນຍາປ່ອຍກູ້</h1>
-<v-card height="1000px">
+<v-card height="auto" elevation="0">
 
     <v-sheet class="mt-10 ml-10">
         <v-btn class="text-primary border border-none" variant="outlined">
@@ -13,10 +13,10 @@
       </v-sheet>
 
       <v-sheet>
-        <v-card class="d-flex align-center flex-column" height="1000px">
+        <v-card class="d-flex align-center flex-column" elevation="0" height="auto">
             <v-container>
                 <v-row>
-                    <v-col cols="2" class="mt-2">
+                    <v-col cols="2" class="mt-3 text-center">
                         <h4>ເລກທີ່ຊັນຍາ</h4>
                     </v-col>
 
@@ -32,31 +32,31 @@
 
                 <v-col cols="3">
                 <h4>ວັນທີ່ອອກສັນຍາ(ເດືອນ/ວັນ/ປີ)</h4>
-                <v-text-field type="date" variant="outlined"></v-text-field>
+                <v-text-field type="date" hide-details density="compact" variant class="border rounded"></v-text-field>
                 </v-col>
                 </v-row>
 
                 <v-row>
                     <v-col cols="6">
                         <h4>ຄົ້ນຫາລູກຄ້າ ຫຼື ເບີໂທ</h4>
-                <v-text-field type="text" variant="outlined"></v-text-field>
+                <v-text-field type="text" hide-details density="compact" variant class="border rounded pt-2 mt-2"></v-text-field>
                     </v-col>
                 </v-row>
 
                 <v-row>
                     <v-col cols="12">
-                        <v-card variant="outlined pb-10">
-                            <h3 class="mt-4 ml-6"> ເລືອກຜູ້ຄ້ຳປະກັນ</h3>
+                        <v-card variant class="pb-10 border">
+                            <h3 class="font-weight-regular mt-4 ml-6"> ເລືອກຜູ້ຄ້ຳປະກັນ</h3>
                         </v-card>
                     </v-col>
                 </v-row>
 
                 <v-row>
                     <v-col cols="12">
-                        <v-card variant="outlined pb-10">
-                            <h3 class="mt-4 ml-6"> ເລືອກມູນຄ່າຂໍ່ກູ້ຢືມ</h3>
+                        <v-card variant class="pb-10 border">
+                            <h3 class="font-weight-regular mt-4 ml-6"> ເລືອກມູນຄ່າຂໍ່ກູ້ຢືມ</h3>
                             <v-container>
-                            <v-select variant="outlined"> </v-select>
+                            <v-select variant class="border" hide-details density="comfortable"> </v-select>
                         </v-container>
                         </v-card>
                     </v-col>
@@ -64,8 +64,8 @@
 
                 <v-row>
                     <v-col cols="12">
-                        <v-card variant="outlined pb-10">
-                            <h3 class="mt-4 ml-6"> ເລືອກຜູ້ຄ້ຳປະກັນ</h3>
+                        <v-card variant class="pb-10 border">
+                            <h3 class=" font-weight-regular mt-4 ml-6"> ເລືອກຜູ້ຄ້ຳປະກັນ</h3>
                         </v-card>
                     </v-col>
                 </v-row>
@@ -73,25 +73,29 @@
                 <v-row>
                     <v-col cols="3">
                     <h4>ຄ່າທຳນຽມປ່ອຍກູ້</h4>
-                    <v-text-field variant="outlined" type="text"></v-text-field>
+                    <v-text-field variant class="border mt-2 pt-2 rounded" hide-details density="compact" type="text"></v-text-field>
                     </v-col>
 
                     <v-col cols="3">
                     <h4>ຄ່າທຳນຽມປະເມີນສັບສິນ</h4>
-                    <v-text-field variant="outlined" type="text"></v-text-field>
+                    <v-text-field variant class="border mt-2 pt-2 rounded" hide-details density="compact" type="text"></v-text-field>
                     </v-col>
                 </v-row>
 
-                <v-row>
+                <v-row class="mt-10">
                     <v-col cols="12" class="text-center">
-                        <v-btn class="bg-red w-50" height="50px" color="white" ><h2>ຢືນຢັນອອກສັນຍາ</h2></v-btn>
+                        <v-btn 
+                        size="large"
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-50 "
+              color="deep-orange-accent-3" 
+              ><h3 class="font-weight-regular">ຢືນຢັນອອກສັນຍາ</h3></v-btn>
                     </v-col>
                 </v-row>
             </v-container>
         </v-card>
 
         <v-sheet class="border border-5 mt-10">
-        <v-card height="400px">
+        <v-card height="auto" elevation="0">
           <v-row no-gutters class="ml-5">
             <v-col cols="3" class="pa-2 ma-2">
               <h4>ເເຕ່ວັນທີ</h4>

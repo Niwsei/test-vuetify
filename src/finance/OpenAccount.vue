@@ -1,8 +1,11 @@
 <template>
     <div>
-<h1>ເປີດບັນຊີ</h1>
-<v-card height="1000px">
-      <v-sheet class="mt-10 ml-10">
+<h1>ເປີດບັນຊີ</h1> 
+<v-card height="auto" elevation="0">
+  <v-container>
+    
+ 
+      <v-sheet class="mt-10 ">
         <v-btn class="text-primary border border-none" variant="outlined">
           ເພີມCIF
         </v-btn>
@@ -10,89 +13,131 @@
           ລາຍການຂໍ້ມູນ(CIF)
         </v-btn>
       </v-sheet>
+      <hr color="#ECEFF1">
 
-
-
-      <v-sheet>
-        <v-card class="d-flex align-center flex-column " height="650px">
-          <v-sheet class="d-flex align-center flex-column" width="1100px">
+      
+        <v-card  height="auto" elevation="0" class="border">
+          
+          <v-row class=" d-flex justify-center ">
+            <v-col cols="6" class=" d-flex flex-column align-center">
             <h4  class="mt-5">ລະຫັດເລກບັນຊີ</h4>
        
             <v-sheet
-              class="w-50 border border-5 d-flex justify-center align-center mt-3 mb-5"
+              class="w-100  border border-5 d-flex justify-center align-center mt-3 mb-5"
               ><span class="font-weight-black text-h5 py-2">0001</span>
               </v-sheet>
+            </v-col>
+            </v-row>
 
-            <h4>ຂໍ້ມູນລູກຄ້າ</h4>
-            <v-sheet class=" d-flex  w-50">
+            <v-row class=" d-flex justify-center text-center"> 
+              <v-col cols="6">
+                <h4>ຂໍ້ມູນລູກຄ້າ</h4>
+                <v-row>
+            <v-col cols="10" class="">
             <v-text-field
               type="text"
-            class="mr-5 "
-              variant="outlined"
+            class="border mt-3"
+              variant
+              hide-details
+              density="compact"
             ></v-text-field>
- <v-btn height="55px" color="red">ຄົ້ນຫາ</v-btn >
-            </v-sheet>
+          </v-col>
+          <v-col cols="2" class="d-flex justify-center align-end">
+        <v-btn size="large" color="red">ຄົ້ນຫາ</v-btn >
+        </v-col>
+      </v-row>
+      </v-col>
+            </v-row>
 
-
+            <v-row class=" d-flex justify-center text-center">
+              <v-col cols="6">
             <h4>CIF</h4>
-            <v-sheet class="w-50">
-            <v-select class="" variant="outlined">asdasd</v-select>
-        </v-sheet>
+            <v-select  class="border mt-3"
+              variant
+              hide-details
+              density="compact"
+              >asdasd</v-select>
+          </v-col>
+          </v-row>
         
+
+          <v-row class=" d-flex justify-center text-center">
+              <v-col cols="6">
         <h4>ປະເພດບັນຊີ</h4>
-            <v-sheet class="w-50">
-            <v-select variant="outlined"
+            <v-select  class="border mt-3"
+              variant
+              hide-details
+              density="compact"
             :items="gender"
-            label="ເລືອກ..."
-            >asdasd</v-select>
-        </v-sheet>
+            value="ເລືອກ..."
+            ></v-select>
+          </v-col>
+          </v-row>
+        
 
+          <v-row class=" d-flex justify-center text-center">
+              <v-col cols="6">
         <h4>ສະກຸນເງີນ(Currency)</h4>
-            <v-sheet class="w-50">
-            <v-select variant="outlined"
-            class=""
+            <v-select  class="border mt-3"
+              variant
+              hide-details
+              density="compact"
             :items="Currency"
-            label="ເລືອກ..."
-            >asdasd</v-select>
-        </v-sheet>
+            value="ເລືອກ..."
+            ></v-select>
+          </v-col>
+          </v-row>
 
+
+          <v-row class=" d-flex justify-center text-center mb-10">
+              <v-col cols="6">
         <h4>ສະກຸນເງີນ(Currency)</h4>
-            <v-sheet class="w-50">
-            <v-btn color="red" class="w-100 " height="50px">ສ້າງບັນຊີ</v-btn>
-        </v-sheet>
+            
+            <v-btn 
+              elevation="0"
+              text="submit"
+              type="submit"
+              size="large"
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-100 mt-3">ສ້າງບັນຊີ</v-btn>
+          </v-col>
+          </v-row>
 
-
-          </v-sheet>
         </v-card>
-      </v-sheet>
+      
 
 
 
 
 
       <v-sheet class="border border-5 mt-10">
-        <v-card height="400px">
+        <v-card height="auto" elevation="0">
+          <v-container>
           <v-row no-gutters class="ml-5">
-            <v-col cols="3" class="pa-2 ma-2">
+            <v-col cols="3" class="ml-1 mt-7">
               <h4>ເເຕ່ວັນທີ</h4>
             </v-col>
-            <v-col cols="3" class="pa-2 ma-2">
+            <v-col cols="3" class="ml-6 mt-7">
               <h4>ຫາວັນທີ</h4>
             </v-col>
           </v-row>
           <v-row no-gutters class="ml-5">
             <v-col cols="3" class="mr-5">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date" hide-details density="compact" class="border rounded" variant > </v-text-field>
             </v-col>
 
             <v-col cols="3">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date"  hide-details density="compact" class="border rounded" variant > </v-text-field>
             </v-col>
 
             <v-col cols="3" >
-<v-btn color="green" class="h-75 ml-5">ຕົກລງ</v-btn>
+<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large" >ຕົກລງ</v-btn>
              </v-col>
           </v-row>
+
+
+<hr color="#ECEFF1" class="my-5">
+          <hr color="#ECEFF1" class="my-5">
+
 
           <v-table>
             <thead>
@@ -125,8 +170,10 @@
                 </tr>
             </tbody>
           </v-table>
+        </v-container>
         </v-card>
       </v-sheet>
+    </v-container>
     </v-card>
   </div>
 </template>

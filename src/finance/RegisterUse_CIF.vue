@@ -2,7 +2,8 @@
   <div>
     <h1>ລົງທະບຽນນຳໃໍຊ້(CIF)</h1>
 
-    <v-card height="1000px">
+    <v-card height="auto" elevation="0">
+      <v-container>
       <v-sheet class="mt-10 ml-10">
         <v-btn class="text-primary border border-none" variant="outlined">
           ເພີມCIF
@@ -13,7 +14,7 @@
       </v-sheet>
 
       <v-sheet>
-        <v-card class="d-flex align-center flex-column" height="320px">
+        <v-card class="d-flex align-center flex-column border" height="320px" elevation="0">
           <v-sheet class="d-flex align-center flex-column" width="1100px">
             <h4 class="mt-5">ລະຫັດເລກຕົວເເທນ(CIF)</h4>
             <v-sheet
@@ -23,12 +24,19 @@
 
             <h4>ຂໍ້ມູນລູກຄ້າ</h4>
             <v-text-field
+            density="comfortable"
+            hide-details
               type="text"
-              class="w-100"
+              class="w-100 border mt-3 mb-7"
               height="50px"
-              variant="outlined"
+              variant
             ></v-text-field>
-            <v-btn class="w-100" height="50px" color="red"
+            <v-btn crounded
+              elevation="0"
+              text="submit"
+              type="submit"
+              size="large"
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-100"
               >ສ້າງເລກຕົວເເທນລູກຄ້າ</v-btn
             >
           </v-sheet>
@@ -36,7 +44,8 @@
       </v-sheet>
 
       <v-sheet class="border border-5 mt-10">
-        <v-card height="400px">
+        <v-card height="auto" elevation="0">
+          <v-container>
           <v-row no-gutters class="ml-5">
             <v-col cols="3" class="pa-2 ma-2">
               <h4>ເເຕ່ວັນທີ</h4>
@@ -47,17 +56,20 @@
           </v-row>
           <v-row no-gutters class="ml-5">
             <v-col cols="3" class="mr-5">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date" hide-details density="compact" class="border rounded" variant > </v-text-field>
             </v-col>
 
             <v-col cols="3">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date"  hide-details density="compact" class="border rounded" variant > </v-text-field>
             </v-col>
 
             <v-col cols="3" >
-<v-btn color="green" class="h-75 ml-5">ຕົກລງ</v-btn>
+<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large" >ຕົກລງ</v-btn>
              </v-col>
           </v-row>
+
+          <hr color="#ECEFF1" class="my-5">
+          <hr color="#ECEFF1" class="my-5">
 
           <v-table>
             <thead>
@@ -84,8 +96,10 @@
                 </tr>
             </tbody>
           </v-table>
+        </v-container>
         </v-card>
       </v-sheet>
+    </v-container>
     </v-card>
   </div>
 </template>

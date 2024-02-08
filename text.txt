@@ -310,3 +310,21 @@ const vuetify = createVuetify({
       },
   })
 
+
+
+
+<hr color="#ECEFF1">
+
+
+
+<v-btn
+              rounded
+              elevation="0"
+              text="submit"
+              type="submit"
+              size="large"
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
+              color="deep-orange-accent-3"
+            >
+              ສ້າງພະເເນກ
+            </v-btn>

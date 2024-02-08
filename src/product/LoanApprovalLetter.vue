@@ -1,45 +1,31 @@
 <template>
     <div>
 <h1>ລາຍການອານຸມັດປ່ອຍກູ້</h1>
-<v-card height="800px">
+<v-card height="auto" elevation="0">
 
 <v-card-text class=" d-flex justify-end " >
-<v-sheet class="w-25" height="60px">
+<v-sheet class="w-25 mt-3 mr-3">
 <v-text-field
-height="60px"
-    class=""
+    class="border rounded"
+    variant
+    density="comfortable"
+    hide-details
     v-model="search"
     prepend-inner-icon="mdi-magnify"
-
-    label="Search"
-    
-    flat
-    hide-details
-    variant="solo-filled"
+    placeholder="Search..."
   ></v-text-field>
 </v-sheet>
 </v-card-text>
 
-<v-card-item>
+<hr  color="#ECEFF1">
 
+<v-card-item>
 <v-data-table
 v-model:page="page"
 :headers="headers"
 :items="desserts"
 :items-per-page="itemsPerPage"
 >
-<template v-slot:top>
-  <v-text-field
-    :model-value="itemsPerPage"
-    class="pa-2"
-    hide-details
-    label="Items per page"
-    min="-1"
-    max="15"
-    type="number"
-    @update:model-value="itemsPerPage = parseInt($event, 10)"
-  ></v-text-field>
-</template>
 
 
 <template v-slot:item.print="{ item } ">

@@ -12,8 +12,10 @@
     v-model="search"
     prepend-inner-icon="mdi-magnify"
     label="Search"
-    flat
-    variant="outlined"
+    class="border rounded"
+              density="comfortable"
+              hide-details
+              variant
   ></v-text-field>
       </v-col>
         </v-row>

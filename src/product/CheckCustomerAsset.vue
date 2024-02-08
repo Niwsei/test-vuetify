@@ -2,7 +2,7 @@
     <div>
 <h1>ກວດສອບຊັບສິນລູກຄ້າ</h1>
 
-<v-card>
+<v-card elevation="0">
   <v-card-title class=" d-flex justify-end pr-15 py-5">
       <v-sheet class="w-25">
     <v-text-field

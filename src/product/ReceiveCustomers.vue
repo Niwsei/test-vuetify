@@ -1,7 +1,7 @@
 <template>
     <div>
 <h1>ຮັບລູກຄ້າ</h1>
-<v-card height="auto" flat>
+<v-card height="auto" elevation="0">
     <v-card-title class=" d-flex justify-end pr-15 py-5">
       <v-sheet class="w-25">
     <v-text-field

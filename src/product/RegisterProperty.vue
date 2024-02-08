@@ -1,7 +1,7 @@
 <template>
     <div>
 <h1>ລົງທະບຽນຊັບສິນ</h1>
-<v-card>
+<v-card elevation="0">
     <v-card-title class=" d-flex align-center pe-2">
 
         <v-row class="d-flex justify-center mt-5">
