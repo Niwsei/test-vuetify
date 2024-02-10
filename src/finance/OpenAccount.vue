@@ -18,8 +18,8 @@
       
         <v-card  height="auto" elevation="0" class="border">
           
-          <v-row class=" d-flex justify-center ">
-            <v-col cols="6" class=" d-flex flex-column align-center">
+          <v-row class=" d-flex justify-center">
+            <v-col cols="6" class=" d-flex flex-column align-center ">
             <h4  class="mt-5">ລະຫັດເລກບັນຊີ</h4>
        
             <v-sheet
@@ -109,7 +109,6 @@
 
 
 
-      <v-sheet class="border border-5 mt-10">
         <v-card height="auto" elevation="0">
           <v-container>
           <v-row no-gutters class="ml-5">
@@ -172,7 +171,6 @@
           </v-table>
         </v-container>
         </v-card>
-      </v-sheet>
     </v-container>
     </v-card>
   </div>

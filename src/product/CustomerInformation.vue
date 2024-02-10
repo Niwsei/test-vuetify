@@ -45,7 +45,7 @@
 
     
     <template v-slot:item.print="{ item } ">
-      <v-btn  class="pb-8 pt-4 my-4 bg-green-accent-3 text-grey-lighten-5" 
+      <v-btn  class="pb-8 pt-4 my-4 bg-teal-accent-4 text-grey-lighten-5" 
       elevation="0"
         v-model="item.print"
         readonly
