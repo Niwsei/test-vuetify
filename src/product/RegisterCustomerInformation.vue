@@ -8,20 +8,23 @@
           <v-row>
             <v-col cols="3">
               <v-card class="ml-10 mt-5" height="auto" flat>
+                
                 <v-img
-                  class="bg-primary"
+                  class="rounded-lg"
                   v-if="selectedImage"
                   :src="selectedImage"
-                  width="120"
-                  height="150"
+                  width="126"
+                  height="140"
                   contain
                 ></v-img>
 
                 <v-btn
                   @click="openFileInput"
-                  style="position: absolute; top: 86px; left: 56px"
-                  prepend-icon="mdi-camera"
-                  class="rounded-circle py-8 bg-secondary"
+                  elevation="0"
+                  style="position: absolute; top: 90px; left: 80px"
+                  icon="mdi-camera"
+                  class="bg-blue"
+                  
                 ></v-btn>
                 <input
                   ref="fileInput"
@@ -29,6 +32,7 @@
                   style="display: none"
                   @change="handleFileChange"
                 />
+    
               </v-card>
             </v-col>
             <v-col cols="9">
@@ -41,7 +45,7 @@
                 variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
                 ></v-text-field>
             </v-col>
 
@@ -53,16 +57,16 @@
                variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
                 ></v-text-field>
             </v-col>
 
-            <v-col cols="3">
+            <v-col cols="2">
               <h4>ເພດ</h4>
-              <v-radio-group inline>
-                <v-radio value="ຊາຍ" >
+              <v-radio-group density="compact" class="mt-2" inline>
+                <v-radio value="ຊາຍ">
                   <template v-slot:label>
-                 <strong class="text-black">ຊາຍ</strong>
+                 <strong class="text-black" >ຊາຍ</strong>
                 </template>
                 </v-radio>
                 <v-radio value="ຍິງ">
@@ -80,7 +84,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -95,7 +99,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2" 
               ></v-text-field>
             </v-col>
 
@@ -105,7 +109,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -115,7 +119,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -125,7 +129,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -140,7 +144,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -150,7 +154,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -158,7 +162,7 @@
               <h4>ປະເພດທີ່ພັກອາໄສ</h4>
               <v-select
               :items="live"
-              class="border rounded"
+              class="border rounded mt-2"
               density="compact"
               hide-details
               variant
@@ -172,7 +176,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -185,7 +189,7 @@
               <h4>ປະເພດເວລາ</h4>
               <v-select
               :items="time"
-              class="border rounded"
+              class="border rounded mt-2"
               density="compact"
               hide-details
               variant
@@ -196,7 +200,7 @@
             <v-col cols="3">
               <h4>ສະຖານະຄວາມເປັນເຈົ້າຂອງ</h4>
               <v-select
-              class="border rounded"
+              class="border rounded mt-2"
               density="compact"
               hide-details
               variant
@@ -219,7 +223,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -229,7 +233,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -239,14 +243,14 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2" 
               ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ເເຂວງ</h4>
               <v-select
-              class="border rounded"
+              class="border rounded mt-2"
               density="compact"
               hide-details
               variant
@@ -258,7 +262,7 @@
 
             <v-col cols="2">
               <h4>ເມືອງ</h4>
-              <v-select  class="border rounded"
+              <v-select  class="border rounded mt-2"
               density="compact"
               hide-details
               variant> </v-select>
@@ -276,7 +280,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -286,7 +290,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2 " 
               ></v-text-field>
             </v-col>
 
@@ -296,27 +300,27 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ຮູບບັດປະຈຳຕົວ:</h4>
-              <v-card class="ml-10 mt-5" height="auto" flat>
+              <v-card class="ml-10 mt-5 border rounded-lg" height="auto" elevation="0" >
                 <v-img
-                  class="bg-primary"
-                  v-if="selectedImage"
-                  :src="selectedImage"
-                  width="120"
-                  height="150"
+                
+                  v-if="selectedImages"
+                  :src="selectedImages"
+                  
                   contain
                 ></v-img>
 
                 <v-btn
                   @click="openFileInput"
-                  style="position: absolute; top: 86px; left: 56px"
-                  prepend-icon="mdi-camera"
-                  class="rounded-circle py-8 bg-secondary"
+                  elevation="0"
+                  style="position: absolute; top: 85px; left: 85px"
+                  icon="mdi-camera"
+                  class="bg-blue"
                 ></v-btn>
                 <input
                   ref="fileInput"
@@ -339,7 +343,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -349,7 +353,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
 
@@ -359,7 +363,7 @@
               variant
                 density="compact"
                 hide-details
-                class="border"
+                class="border rounded mt-2"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -380,9 +384,9 @@
             </v-col>
           </v-row>
 
-          <v-row>
+          <v-row class="my-5">
             <v-col cols="12" class="  d-flex justify-center">
-          <v-btn width="50%" color="red" height="50px">ບັນທຶກ</v-btn>
+          <v-btn  class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-50" elevation="0" color="red" size="large">ບັນທຶກ</v-btn>
             </v-col>
           </v-row>
 
@@ -601,7 +605,11 @@ export default {
 
 
       selectedImage:
-        "https://static.vecteezy.com/system/resources/previews/010/852/915/original/business-man-cartoon-character-png.png",
+        "http://149.129.55.90/SCNMF_UAT/images/User.png",
+        selectedImages:
+        "http://149.129.55.90/SCNMF_UAT/images/pic.jpg",
+      
+        
       }
   },
 

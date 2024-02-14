@@ -2,10 +2,10 @@
     <div>
 <h1>ກວດສອບການປ່ອຍກູ້</h1>
 <v-card height="auto" elevation="0"> 
-
-   <v-row class="mt-2 ml-5">
+<v-container>
+   <v-row >
     <v-col cols="3">
-<v-select :items="register"  variant="outlined" density="comfortable" ></v-select>
+<v-select :items="register" value="ລົງທະບຽນ" variant hide-details class="border rounded" density="compact" ></v-select>
 </v-col>
 <v-col cols="1">
 <v-btn class="bg-green-accent-3 text-white" size="large" >ຕົກລົງ</v-btn>
@@ -16,7 +16,7 @@
 <v-card-text class=" d-flex justify-end ">
 <v-sheet class="w-25">
 <v-text-field
-        class="border"
+        class="border rounded"
         density="comfortable"
         single-line
         v-model="search"
@@ -56,7 +56,7 @@
   </v-data-table>
 </v-card-item>
 
-
+</v-container>
 </v-card>
 
  </div>

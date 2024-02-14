@@ -11,7 +11,7 @@
           ລາຍການຂໍ້ມູນ(CIF)
         </v-btn>
       </v-sheet>
-
+      <hr color="#ECEFF1">
       <v-sheet>
         <v-card class="d-flex align-center flex-column" elevation="0" height="auto">
             <v-container>
@@ -21,7 +21,7 @@
                     </v-col>
 
                     <v-col cols="2">
-                        <v-sheet class=" text-center pa-2 border border-2">
+                        <v-sheet rounded class=" text-center pa-2 border border-2">
                     <span class=" font-weight-bold">0082</span>
                         </v-sheet>
                    </v-col>
@@ -32,7 +32,7 @@
 
                 <v-col cols="3">
                 <h4>ວັນທີ່ອອກສັນຍາ(ເດືອນ/ວັນ/ປີ)</h4>
-                <v-text-field type="date" hide-details density="compact" variant class="border rounded"></v-text-field>
+                <v-text-field type="date" hide-details density="compact" variant class="border rounded mt-2"></v-text-field>
                 </v-col>
                 </v-row>
 
@@ -56,7 +56,7 @@
                         <v-card variant class="pb-10 border">
                             <h3 class="font-weight-regular mt-4 ml-6"> ເລືອກມູນຄ່າຂໍ່ກູ້ຢືມ</h3>
                             <v-container>
-                            <v-select variant class="border" hide-details density="comfortable"> </v-select>
+                            <v-select variant class="border rounded" hide-details density="comfortable"> </v-select>
                         </v-container>
                         </v-card>
                     </v-col>
@@ -85,6 +85,7 @@
                 <v-row class="mt-10">
                     <v-col cols="12" class="text-center">
                         <v-btn 
+                        elevation="0"
                         size="large"
               class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-50 "
               color="deep-orange-accent-3" 
@@ -104,21 +105,23 @@
               <h4>ຫາວັນທີ</h4>
             </v-col>
           </v-row>
-          <v-row no-gutters class="ml-5">
+          <v-row no-gutters class="ml-5 mb-10">
             <v-col cols="3" class="mr-5">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date" variant hide-details density="compact" class="border rounded"> </v-text-field>
             </v-col>
 
             <v-col cols="3">
-              <v-text-field type="date" variant="outlined"> </v-text-field>
+              <v-text-field type="date" variant hide-details density="compact" class="border rounded"> </v-text-field>
             </v-col>
 
             <v-col cols="3" >
-<v-btn color="green" class="h-75 ml-5">ຕົກລງ</v-btn>
+<v-btn size="large" elevation="0"  class="ml-5 text-blue-grey-lighten-5 bg-green-accent-4">ຕົກລງ</v-btn>
              </v-col>
           </v-row>
 
-          <v-table>
+          <hr color="#ECEFF1">
+
+          <v-table class="mt-2">
             <thead>
                 <tr>
                     <th class="font-weight-bold">ລ/ດ</th>

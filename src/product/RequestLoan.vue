@@ -7,12 +7,12 @@
 
       <v-row class="d-flex justify-center mt-5">
           <v-col cols="8">
-            <h3 class="d-flex justify-center"><v-icon>mdi-magnify</v-icon>ຄົ້ນຫາຂໍ້ມູນລູກຄ້າ</h3>
+            <p class="d-flex justify-center"><v-icon>mdi-magnify</v-icon>ຄົ້ນຫາຂໍ້ມູນລູກຄ້າ</p>
 <v-text-field
     v-model="search"
     prepend-inner-icon="mdi-magnify"
-    label="Search"
-    class="border rounded"
+    placeholder="Search..."
+    class="border rounded mb-3 mt-2"
               density="comfortable"
               hide-details
               variant

@@ -5,11 +5,11 @@
 
 <v-card  elevation="0">
   <v-container>
-    <v-row class="d-flex justify-end mb-5">
+    <v-row class="d-flex justify-end mb-5 mt-2">
     <v-col cols="3">
     <v-text-field
         v-model="search"
-        class="border"
+        class="border rounded"
         prepend-inner-icon="mdi-magnify"
         variant
         density="compact"
@@ -21,10 +21,11 @@
     </v-col>
      </v-row>
 
-
+     <hr color="#ECEFF1">
 
     
 <v-data-table
+     
     v-model:page="page"
     :headers="headers"
     :items="desserts"

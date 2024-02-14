@@ -15,12 +15,12 @@
         <v-col cols="3">
            <v-text-field type="text" variant
            class="border rounded"
-           density="comfortable"
+           density="compact "
            hide-details
            ></v-text-field>
         </v-col>
         <v-col cols="8">
-            <v-text-field type="text" disabled variant hide-details density="comfortable" class="border bg-grey rounded" ></v-text-field>
+            <v-text-field type="text" disabled variant hide-details density="compact" class="border bg-blue-grey-lighten-5 rounded" ></v-text-field>
         </v-col>
         </v-row>
 <hr>
@@ -28,21 +28,23 @@
         <v-container>
           <v-row>
             <v-col cols="3">
-              <v-card class="ml-10 mt-5" height="auto" flat>
+              <v-card class="ml-10 mt-5" height="auto"  flat>
                 <v-img
-                  class="bg-primary"
+                  class=" rounded-lg "
                   v-if="selectedImage"
                   :src="selectedImage"
-                  width="120"
-                  height="150"
+                  width="126"
+                  height="140"
                   contain
                 ></v-img>
 
                 <v-btn
                   @click="openFileInput"
-                  style="position: absolute; top: 86px; left: 56px"
-                  prepend-icon="mdi-camera"
-                  class="rounded-circle py-8 bg-secondary"
+                  elevation="0"
+                  style="position: absolute; top: 90px; left: 80px"
+                  icon="mdi-camera"
+                  class="bg-blue"
+                  
                 ></v-btn>
                 <input
                   ref="fileInput"
@@ -58,13 +60,13 @@
               <v-row>
             <v-col cols="3">
               <h4>ຊື່ ເເລະ ນາມສະກຸນ ຜູ້ຄ້ຳປະກັນ</h4>
-              <v-text-field type="text" color="" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" color="" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
 
             <v-col cols="2">
               <h4>ເພດ</h4>
-              <v-radio-group inline>
+              <v-radio-group density="compact" inline>
                 <v-radio value="ຊາຍ" label="ຊາຍ" ></v-radio>
                 <v-radio value="ຍິງ" label="ຍິງ"></v-radio>
               </v-radio-group>
@@ -77,17 +79,17 @@
             
             <v-col cols="2">
               <h4>ອາຍຸ</h4>
-              <v-text-field density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ດ/ວ/ປ ເກີດ</h4>
-              <v-text-field type="date" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="date" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ສັນຊາດ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
           </v-row>
 
@@ -95,22 +97,22 @@
           <v-row>
             <v-col cols="3">
               <h4>ເບີໂທ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ເບີວອດເເອັບ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ອາຊີບ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ສະຖານທີ່ເຮັດວຽກ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
           </v-row>
@@ -122,7 +124,7 @@
               <h4>ປະເພດທີ່ພັກອາໄສ</h4>
               <v-select
               class="border rounded"
-              density="comfortable"
+              density="compact"
               hide-details
               variant
               :items="live"
@@ -133,14 +135,14 @@
 
             <v-col cols="3">
               <h4>ເວລາພັກອາໄສ(ອາໄສຢູ່ມາໃດ)</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ປະເພດເວລາ</h4>
               <v-select
               class="border rounded"
-              density="comfortable"
+              density="compact"
               hide-details
               variant
               :items="time"
@@ -153,7 +155,7 @@
               <h4>ສະຖານະຄວາມເປັນເຈົ້າຂອງ</h4>
               <v-select
               class="border rounded"
-              density="comfortable"
+              density="compact"
               hide-details
               variant
               :items="status"
@@ -169,24 +171,24 @@
           <v-row>
             <v-col cols="2">
               <h4>ໜ່ວຍ:</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ເຮືອນເລກທີ:</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ບ້ານ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ເເຂວງ</h4>
               <v-select
               class="border rounded"
-              density="comfortable"
+              density="compact"
               hide-details
               variant
               :items="city"
@@ -198,7 +200,7 @@
               <h4>ເມືອງ</h4>
               <v-select
               class="border rounded"
-              density="comfortable"
+              density="compact"
               hide-details
               variant
               > </v-select>
@@ -212,36 +214,36 @@
           <v-row>
             <v-col cols="2">
               <h4>ເລກບັດປະຈຳຕົວ:</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ວັນທີ່ອອກບັດປະຈຳຕົວ</h4>
-              <v-text-field type="date" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="date" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ວັນທີ່ໝົດອາຍຸບັດປະຈຳຕົວ</h4>
-              <v-text-field type="date" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="date" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="2">
               <h4>ຮູບບັດປະຈຳຕົວ:</h4>
-              <v-card class="ml-10 mt-5" height="auto" flat>
+              <v-card class="ml-10 mt-5 border rounded-lg" height="auto" elevation="0" >
                 <v-img
-                  class="bg-primary"
-                  v-if="selectedImage"
-                  :src="selectedImage"
-                  width="120"
-                  height="150"
+                
+                  v-if="selectedImages"
+                  :src="selectedImages"
+                  
                   contain
                 ></v-img>
 
                 <v-btn
                   @click="openFileInput"
-                  style="position: absolute; top: 86px; left: 56px"
-                  prepend-icon="mdi-camera"
-                  class="rounded-circle py-8 bg-secondary"
+                  elevation="0"
+                  style="position: absolute; top: 85px; left: 85px"
+                  icon="mdi-camera"
+                  class="bg-blue"
                 ></v-btn>
                 <input
                   ref="fileInput"
@@ -260,17 +262,17 @@
           <v-row>
             <v-col cols="3">
               <h4>ເລກປື້ມສຳມະໂນຄົວ:</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ວັນທີ່ອອກສຳມະໂນຄົວ</h4>
-              <v-text-field type="text" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="text" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
 
             <v-col cols="3">
               <h4>ວັນທີ່ໝົດອາຍຸສຳມະໂນຄົວ</h4>
-              <v-text-field type="date" density="comfortable" hide-details variant class="border rounded" ></v-text-field>
+              <v-text-field type="date" density="compact" hide-details variant class="border rounded" ></v-text-field>
             </v-col>
           </v-row>
 
@@ -305,11 +307,11 @@
     <v-card height="auto" elevation="0">
         <v-row class="mt-5 ml-5 mb-5">
             <v-col cols="4">
- <v-text-field type="text" density="comfortable" hide-details variant class="border rounded"  placeholder="ຄົ້ນຫາຊື່ລູກຄ້າ"></v-text-field>
+ <v-text-field type="text" density="compact" hide-details variant class="border rounded"  placeholder="ຄົ້ນຫາຊື່ລູກຄ້າ"></v-text-field>
             </v-col>
           
             <v-col cols="4">
-                <v-text-field type="text" density="comfortable" hide-details variant class="border rounded"  placeholder="ຄົ້ນຫາເບີໂທລູກຄ້າ"></v-text-field>
+                <v-text-field type="text" density="compact" hide-details variant class="border rounded"  placeholder="ຄົ້ນຫາເບີໂທລູກຄ້າ"></v-text-field>
             </v-col>
         </v-row>
         <hr>
@@ -515,7 +517,10 @@ export default {
 
 
       selectedImage:
-        "https://static.vecteezy.com/system/resources/previews/010/852/915/original/business-man-cartoon-character-png.png",
+        "http://149.129.55.90/SCNMF_UAT/images/User.png",
+        selectedImages:
+        "http://149.129.55.90/SCNMF_UAT/images/pic.jpg",
+      
       }
   },
 

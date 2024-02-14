@@ -2,11 +2,11 @@
     <div>
         <h1>ລາຍລະອຽດການຊຳລະ</h1>
         <v-card height="auto" elevation="0">
-
-    <v-card-title class=" d-flex justify-end pr-15 py-5">
+<v-container>
+    <v-card-title class=" d-flex justify-end py-5">
       <v-sheet class="w-25">
     <v-text-field
-    class="border"
+    class="border rounded"
     color="red"
         v-model="search"
         prepend-inner-icon="mdi-magnify"
@@ -48,7 +48,7 @@ v-model:page="page"
 </v-data-table>
 </v-card-item>
 
-
+</v-container>
 </v-card>
 
 </div>
