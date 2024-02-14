@@ -1,47 +1,52 @@
 <template>
     <div>
 <h1>ລາຍງານຄ້າງຊຳລະ</h1>
-<v-card height="1300px">
-  
-  <v-card>
-       <v-sheet class="border border-5 mt-10">
-         <v-card height="400px">
+<v-card height="auto" elevation="0">
+  <v-container>
+  <v-card elevation="0" height="auto">
+       <v-sheet >
+         <v-card height="auto" elevation="0">
            <v-row no-gutters class="ml-5">
              <v-col cols="3" class="pa-2 ma-2">
                <h4>ສະກຸນເງີນ</h4>
              </v-col>
            </v-row>
-           <v-row no-gutters class="ml-5">
+           <v-row no-gutters class="ml-5 mb-10">
 
              <v-col cols="2">
             <v-select :items="currency"
-            class="ml-5"
+            class="ml-5 border rounded"
             value="ທັ້ງໝົດ"
-            variant="outlined"
+            variant
+            hide-details
+            density="compact"
             >
 
             </v-select>
              </v-col>
  
              <v-col cols="3" >
- <v-btn color="green" class="h-50  ml-5">ຕົກລງ</v-btn>
+ <v-btn elevation="0" class="bg-green-accent-4 text-blue-grey-lighten-5  ml-7" size="large">ຕົກລງ</v-btn>
               </v-col>             
            </v-row>
 
-           <hr>
+           <hr color="#ECEFF1">
            
            <v-row no-gutters class="d-flex justify-end mr-5 mt-5">
             <v-col cols="3" >
                 <v-text-field
                 placeholder="Search..."
-                variant="outlined"
+                variant
+                hide-details
+                class="border rounded mb-5"
+                density="comfortable"
                 type="search"
                 >
                 </v-text-field>
             </v-col>
            </v-row>
 
-           <hr>
+           <hr color="#ECEFF1">
           
 
  
@@ -87,6 +92,7 @@
          </v-card>
        </v-sheet>
      </v-card>
+    </v-container>
      </v-card>
    </div>
  </template>

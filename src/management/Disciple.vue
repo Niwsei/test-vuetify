@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- card -->
-    <v-card height="auto" elevation="0">
+    <v-card height="auto" elevation="0" rounded>
       <v-card-title>
         <h3 class="mt-5 font-weight-regular">ສ້າງສີດ</h3>
       </v-card-title>
       <v-card-text class="pt-10 px-7">
         <p class="font-weight-black pb-2">ຊື່ສິດ</p>
         <v-text-field
-          class="border border-1"
+          class="border rounded"
           variant
           density="compact"
           hide-details
@@ -18,8 +18,10 @@
       <div class="d-flex justify-end px-10 py-10">
         <v-btn
           rounded
+          elevation="0"
           size="large"
           class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
+          style="letter-spacing: 0px;"
         >
           ສ້າງສີດ
         </v-btn>
@@ -30,8 +32,8 @@
     <v-table density="compact" height="auto" class="mt-15 pt-5 border border-1">
       <thead>
         <tr>
-          <th class="text-left">ເລກລຳດັບ</th>
-          <th class="text-left">ຊື່ສິດ</th>
+          <th class="text-left font-weight-bold">ເລກລຳດັບ</th>
+          <th class="text-left font-weight-bold">ຊື່ສິດ</th>
           <th class="text-left"></th>
         </tr>
       </thead>
@@ -148,6 +150,8 @@
 export default {
   data() {
     return {
+      
+     
       disciple:[
 
       {

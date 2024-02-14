@@ -24,7 +24,7 @@
               type="submit"
               size="large"
               class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
-              color="deep-orange-accent-3"
+              active-class="actives"
             >
               ສ້າງພະເເນກ
             </v-btn>
@@ -164,6 +164,7 @@ export default {
 
   data() {
     return {
+   
       dessert: [
         {
         name: "siyon",
@@ -216,4 +217,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+.actives {
+background: black;
+color: white;
+}
+
+
+</style>

@@ -7,21 +7,22 @@
       <v-card-text class="py-10 px-5">
         <form @submit.prevent="submit">
           <div>
-            <label for="" class="font-weight-black">ຫົວຂໍ້</label>
+            <p for="" class="font-weight-black">ຫົວຂໍ້</p>
             <v-select
               :items="section"
-              variant="outlined"
+              variant
               density="compact"
               hide-details
-              label="ເລືອກຫົວຂໍ້"
+              value="ເລືອກຫົວຂໍ້"
+              class="border rounded mt-2"
             ></v-select>
           </div>
 
 
           <div class="my-10">
-            <label for="" class="font-weight-black">ຊື່ຫນ້າ</label>
+            <p for="" class="font-weight-black">ຊື່ຫນ້າ</p>
             <v-text-field
-              class="border border-1 mt-2"
+              class="border rounded mt-2"
               hide-details
               variant
               density="compact"
@@ -30,9 +31,9 @@
 
 
           <div>
-            <label for="" class="font-weight-black">ຊື່ໄຟຣ</label>
+            <p for="" class="font-weight-black">ຊື່ໄຟຣ</p>
             <v-text-field
-              class="border border-1 mt-2"
+              class="border rounded mt-2"
               hide-details
               variant
               density="compact"
@@ -60,11 +61,11 @@
   <v-table density="compact" height="auto" class="mt-15">
     <thead>
       <tr>
-        <th class="text-left">ເລກລຳດັບ</th>
-        <th class="text-left">ຊື່ຫນ້າ</th>
-        <th class="text-left">ຊື່ໄຟຣ</th>
-        <th class="text-left">ຫົວຂໍ້</th>
-        <th class="text-left"></th>
+        <th class="text-left font-weight-bold ">ເລກລຳດັບ</th>
+        <th class="text-left font-weight-bold">ຊື່ຫນ້າ</th>
+        <th class="text-left font-weight-bold">ຊື່ໄຟຣ</th>
+        <th class="text-left font-weight-bold">ຫົວຂໍ້</th>
+        <th class="text-left font-weight-bold"></th>
       </tr>
     </thead>
     <tbody>

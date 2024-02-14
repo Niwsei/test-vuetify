@@ -10,7 +10,7 @@
 <v-row>
   <v-col>
 <p class="font-weight-black">ປະເພດວັນພັກ</p> 
-      <v-select label="ສ້າງສິດ" variant="outlined" hide-details density="compact" :items="date" class="mt-3" ></v-select>
+      <v-select value="ເລືອກໝວດໝູ່ວັນພັກ" variant  hide-details density="compact" :items="date" class=" border rounded mt-3" ></v-select>
     </v-col>
     </v-row>
 
@@ -19,10 +19,10 @@
   <v-col>
 <p class="font-weight-black">ຊື່ວັນພັກ</p>
 <v-text-field 
-class="border mt-3"
+class="border mt-3 rounded"
 variant 
 hide-details 
-density="compact"
+density="comfortable"
             required
           ></v-text-field>
         </v-col>
@@ -33,7 +33,7 @@ density="compact"
     <p class="font-weight-black">ວັນທີ່ກຳນົດພັກ(ດ-ວ-ປ)</p>
  <v-text-field 
  type="date"
- class="border mt-3"
+ class="border  rounded mt-3"
 variant 
 hide-details 
 density="compact"
@@ -44,10 +44,12 @@ density="compact"
 
 <div class=" py-5">
 <v-btn 
-class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
+elevation="0"
+class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 "
 size="large"
+style="letter-spacing: -0.5px;"
 >
-ສ້າງພະເເນກ
+ບັນທຶກຂໍ້ມູນ
 </v-btn>
 </div>
 </v-container>
@@ -195,50 +197,49 @@ export default {
 
 
 
-    data: vm => ({
-      date: new Date().toISOString().substr(0, 10),
-      dateFormatted: vm.formatDate(new Date().toISOString().substr(0, 10)),
-      menu1: false,
-      menu2: false
-    }),
+    // data: vm => ({
+    //   date: new Date().toISOString().substr(0, 10),
+    //   dateFormatted: vm.formatDate(new Date().toISOString().substr(0, 10)),
+    //   menu1: false,
+    //   menu2: false
+    // }),
 
 
 
-    computed: {
-      computedDateFormatted () {
-        return this.formatDate(this.date)
-      }
-    },
+    // computed: {
+    //   computedDateFormatted () {
+    //     return this.formatDate(this.date)
+    //   }
+    // },
 
 
 
-    watch: {
-      date (val) {
-        this.dateFormatted = this.formatDate(this.date)
-      }
-    },
+    // watch: {
+//       date (val) {
+//         this.dateFormatted = this.formatDate(this.date)
+//       }
+//     },
 
 
 
 
-    methods: {
-      formatDate (date) {
-        if (!date) return null
+//     methods: {
+//       formatDate (date) {
+//         if (!date) return null
 
-        const [year, month, day] = date.split('-')
-        return `${month}/${day}/${year}`
-      },
-      parseDate (date) {
-        if (!date) return null
+//         const [year, month, day] = date.split('-')
+//         return `${month}/${day}/${year}`
+//       },
+//       parseDate (date) {
+//         if (!date) return null
 
-        const [month, day, year] = date.split('/')
-        return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
-      }
+//         const [month, day, year] = date.split('/')
+//         return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+//       }
     }
 
 
-}
-
+    
 </script>
 
 
