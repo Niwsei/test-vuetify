@@ -45,6 +45,29 @@ import NotifyCustomerAccountInformation from '../notice/NotifyCustomerAccountInf
  /* login */
  import login from '../views/login.vue'
 
+ import {useAuthStore} from '../stores/auth';
+
+
+ const authMiddleware = (to , from , next) => {
+
+
+  const token = localStorage.getItem('web_token');
+  const user = localStorage.getItem('web_user');
+  const store = useAuthStore();
+
+  if(token){
+    store.set_token(token);
+    store.set_user(user);
+    next();
+  }
+  else {
+    next({
+      path:'login',
+      replace: true
+    });
+  }
+ }
+
 
 
 const routes = [
@@ -58,38 +81,59 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component:Home
+    component:Home,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
  
   {
     path: '/Department',
     name: 'Department',
-    component:Department
+    component:Department,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/FontFunction',
     name: 'FontFunction',
-    component: FontFunction
+    component: FontFunction,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/SetRestDays',
     name: 'SetRestDays',
-    component: SetRestDays
+    component: SetRestDays,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/User',
     name: 'User',
-    component: User
+    component: User,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/Disciple',
     name: 'Disciple',
-    component: Disciple
+    component: Disciple,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/ManageDisciple',
     name: 'ManageDisciple',
-    component: ManageDisciple
+    component: ManageDisciple,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
  
 
@@ -99,57 +143,90 @@ const routes = [
   {
     path: '/CheckCustomerAsset',/*  ກວດສອບຊັບສິນລູກຄ້າ */
     name: 'CheckCustomerAsset',
-    component: CheckCustomerAsset
+    component: CheckCustomerAsset,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/CheckLending',   /* ກວດສອບການປ່ອຍກູ້ */
     name: 'CheckLending',
-    component: CheckLending
+    component: CheckLending,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/PaymentDetails',   /* ລາຍລະອຽດການຊຳລະ */
     name: 'PaymentDetails',
-    component: PaymentDetails
+    component: PaymentDetails,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/CustomerInformation',  /* ຂໍ້ມູນລູກຄ້າ */
     name: 'CustomerInformation',
-    component: CustomerInformation
+    component: CustomerInformation,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/IssueLoanContract',  /* ອອກສັນຍາປ່ອຍກູ້  */
     name: 'IssueLoanContract',
-    component: IssueLoanContract
+    component: IssueLoanContract,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/LoanApprovalLetter',  /* ລາຍການອານຸມັດປ່ອຍກູ້ */
     name: 'LoanApprovalLetter',
-    component: LoanApprovalLetter
+    component: LoanApprovalLetter,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/ReceiveCustomers', /* ຮັບລູກຄ້າ */
     name: 'ReceiveCustomers',
-    component: ReceiveCustomers
+    component: ReceiveCustomers,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/RegisterCustomerInformation', /* ລົງທະບຽນຂໍ້ມູນລູກຄ້າ */
     name: 'RegisterCustomerInformation',
-    component: RegisterCustomerInformation
+    component: RegisterCustomerInformation,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/RegisterGuarantor',/* ລົງທະບຽນຜູ້ຄ້ຳປະກັນ */
     name: 'RegisterGuarantor',
-    component: RegisterGuarantor
+    component: RegisterGuarantor,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/RegisterProperty',/* ລົງທະບຽນຊັບສິນ  */
     name: 'RegisterProperty',
-    component: RegisterProperty
+    component: RegisterProperty,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/RequestLoan',/* ຂໍປ່ອຍກູ້ */
     name: 'RequestLoan',
-    component: RequestLoan
+    component: RequestLoan,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
 
 
@@ -158,24 +235,39 @@ const routes = [
   {
     path: '/AddMoneyAccount', /* ເພີ່ມເງີນເຂົ້າບັນຊີ */
     name: 'AddMoneyAccount',
-    component: AddMoneyAccount
+    component: AddMoneyAccount,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
   {
     path: '/OpenAccount',  /* ເປີດບັນຊີ */
     name: 'OpenAccount',
-    component: OpenAccount
+    component: OpenAccount,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },  {
     path: '/PayInstallments', /* ລາຍລະອຽດການຊຳລະ */
     name: 'PayInstallments',
-    component: PayInstallments
+    component: PayInstallments,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },  {
     path: '/RegisterUse_CIF', /* ລົງທະບຽນນຳໃໍຊ້(CIF) */
     name: 'RegisterUse_CIF',
-    component: RegisterUse_CIF
+    component: RegisterUse_CIF,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },  {
     path: '/WithdrawMoneyAccount', /* ຖອນເງີນອອກບັນຊີ */
     name: 'WithdrawMoneyAccount',
-    component: WithdrawMoneyAccount
+    component: WithdrawMoneyAccount,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
 
 
@@ -185,23 +277,38 @@ const routes = [
   {
     path: '/NotificationOverduePayment', /* ລາຍງານຄ້າງຊຳລະ */
     name: 'NotificationOverduePayment',
-    component: NotificationOverduePayment
+    component: NotificationOverduePayment,
+    meta: {
+      middleware: [authMiddleware]
+    }
   }, {
     path: '/DailyPaymentPattern', /* ລາຍການຕ້ອງຊຳລະປະຈຳວັນ */
     name: 'DailyPaymentPattern',
-    component: DailyPaymentPattern
+    component: DailyPaymentPattern,
+    meta: {
+      middleware: [authMiddleware]
+    }
   }, {
     path: '/NotificationLoanContract', /* ລາຍງານສັນຍາກູ້ຢືມ  */
     name: 'NotificationLoanContract',
-    component: NotificationLoanContract
+    component: NotificationLoanContract,
+    meta: {
+      middleware: [authMiddleware]
+    }
   }, {
     path: '/NotificationPayment', /* ລາຍງານການຊຳລະ */
     name: 'NotificationPayment',
-    component: NotificationPayment
+    component: NotificationPayment,
+    meta: {
+      middleware: [authMiddleware]
+    }
   }, {
     path: '/NotifyCustomerAccountInformation', /* ລາຍງານຂໍ້ມູນບັນຊີລູກຄ້າ  */
     name: 'NotifyCustomerAccountInformation',
-    component: NotifyCustomerAccountInformation
+    component: NotifyCustomerAccountInformation,
+    meta: {
+      middleware: [authMiddleware]
+    }
   },
 
 
@@ -210,7 +317,35 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes: routes,
+  scrollBehavior(){
+    window.scrollTo(0,0);
+  }
+});
+
+
+
+router.beforeEach((to, from , next) => {
+  const token = localStorage.getItem('web_token');
+  if(to.meta.middleware){
+    to.meta.middleware.forEach(middleware => middleware(to , from , next))
+  }
+  else {
+    if(to.path == '/login') {
+      if(token) {
+        next({
+          path:'/',
+          replace: true
+        })
+      }
+      else {
+        next();
+      }
+    }
+    else {
+      next();
+    }
+  }
 })
 
 export default router

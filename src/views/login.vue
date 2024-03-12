@@ -32,7 +32,6 @@
 
 <script>
 import axios from 'axios';
-import {ref , onMounted } from 'vue';
 /* import { useAuthStore} from '../stores/auth' */
 
 
@@ -47,10 +46,17 @@ export default {
   methods: {
         login() {
 
-          if( this.email != '' || this.password){
-            axios.post('http://149.129.55.90:5050/autherize/login' ,{ user_name:this.email , user_password:this.password})
+          if( this.email != '' || this.password != '' ){
+            axios.post('http://149.129.55.90:5050/autherize/login' ,{ username:this.email , password:this.password })
 .then((res) => {
-  console.log('data :' ,res.data)
+  if(res.data.resultCode == "OK"){
+  console.log('wwwwwwwwwwwwwwwwwwwwwwwwwwwww:',res.data);
+  this.email = '';
+  this.password = '';
+  localStorage.setItem('web_token' , res.data.accessToken);
+  localStorage.setItem('web_user' , JSON.stringify(res.data.full_name));
+  this.$router.push('/');
+  }
 }).catch((err) => {
   console.log('error :' , err)
 })

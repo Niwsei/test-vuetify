@@ -1,14 +1,13 @@
 <template>
     <VApp id="inspire">
         
-        <VNavigationDrawer  v-model="drawer" class="bg-pink lighten-5">
+        <VNavigationDrawer  v-model="drawer" class="bg-pink lighten-5" v-if="store.get_token">
         <!--  -->
    <VList class="justify-center align-content-center text-center pt-5">
     <VListItem title="SCN NF" prepend-avatar="https://png.pngtree.com/png-clipart/20190116/ourmid/pngtree-hand-painted-dolphins-cartoon-dolphin-q-version-of-dolphin-lovely-png-image_387165.jpg"></VListItem>
 </VList>
 <VDivider></VDivider>
 <v-list>
-   
       <p class="my-5 ml-8 text-caption">ຂໍ້ມູນລະບົບ</p>
 
       <v-list-group>
@@ -21,8 +20,7 @@
           ></v-list-item>
         </template>
         
-        
-
+      
           <v-list-item
             v-for="([title, router], index) in management"
             :key="index"
@@ -33,9 +31,6 @@
         </v-list-item>
 
       </v-list-group>
-
-
-
 
 
       <v-list-group >
@@ -56,15 +51,10 @@
            
           ></v-list-item>
 
-          
-
-          
+             
       </v-list-group>
 
 
-
-
-      
       <v-list-group>
         <template v-slot:activator="{ props }">
           <v-list-item
@@ -83,8 +73,6 @@
            
           ></v-list-item>
       </v-list-group>
-
-
 
 
       <v-list-group>
@@ -107,26 +95,26 @@
       </v-list-group>
 
 
-
-
-
-
     </v-list>
-
-
-
-
-
-    
-
-   
         </VNavigationDrawer>
 
-        <VAppBar elevation="0" class="pt-3 bg-grey-lighten-5 border-bottom">
+
+
+
+
+        <VAppBar elevation="0" class="pt-3 bg-grey-lighten-5 border-bottom" v-if="store.get_token">
             <VAppBarNavIcon @click="drawer = !drawer"></VAppBarNavIcon>
             <VAppBarTitle>Application</VAppBarTitle>
             <v-spacer></v-spacer>
         </VAppBar>
+
+
+
+        
+
+
+
+
         
         <VMain class="h-100 mt-10 ">
             <!--  -->
@@ -137,7 +125,7 @@
 
 
 
-        <v-footer class="d-flex justify-center align-content-center " >
+        <v-footer  class="d-flex justify-center align-content-center " v-if="store.get_token">
       <v-sheet>
         © 2024 Copyright SCN NON DEPOSITS TAKING MICROFINANCE INSTITUTIONS SOLE CO., LTD by CTech.
       </v-sheet>
@@ -148,14 +136,8 @@
     </VApp>
 </template>
 
-<script setup>
-import {ref} from 'vue'
-
-const drawer = ref(null)
-
-</script>
-
 <script>
+import { useAuthStore } from '../stores/auth';
 
 export default {
     data() {
@@ -204,7 +186,12 @@ export default {
         
       ],
     }
-}
+},
+
+  setup(){
+    const store = useAuthStore();
+    return { store }
+  }
 }
 </script>
 
