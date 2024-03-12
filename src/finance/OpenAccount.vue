@@ -20,10 +20,10 @@
           
           <v-row class=" d-flex justify-center">
             <v-col cols="6" class=" d-flex flex-column align-center ">
-            <h4  class="mt-5">ລະຫັດເລກບັນຊີ</h4>
+            <h4  class="mt-5 text-blue-grey-lighten-3">ລະຫັດເລກບັນຊີ</h4>
        
             <v-sheet
-              class="w-100  border border-5 d-flex justify-center align-center mt-3 mb-5"
+              class="w-100  border border-5 d-flex justify-center align-center mt-3 mb-5 rounded"
               ><span class="font-weight-black text-h5 py-2">0001</span>
               </v-sheet>
             </v-col>
@@ -31,11 +31,11 @@
 
             <v-row class=" d-flex justify-center text-center"> 
               <v-col cols="6">
-                <h4>ຂໍ້ມູນລູກຄ້າ</h4>
+                <h4 class="text-blue-grey-lighten-3">ຂໍ້ມູນລູກຄ້າ</h4>
                 <v-row>
             <v-col cols="10" class="">
             <v-text-field
-              type="text"
+              type="text rounded"
             class="border mt-3"
               variant
               hide-details
@@ -43,7 +43,7 @@
             ></v-text-field>
           </v-col>
           <v-col cols="2" class="d-flex justify-center align-end">
-        <v-btn size="large" color="red">ຄົ້ນຫາ</v-btn >
+        <v-btn size="large" color="red" elevation="0">ຄົ້ນຫາ</v-btn >
         </v-col>
       </v-row>
       </v-col>
@@ -51,8 +51,8 @@
 
             <v-row class=" d-flex justify-center text-center">
               <v-col cols="6">
-            <h4>CIF</h4>
-            <v-select  class="border mt-3"
+            <h4 class="text-blue-grey-lighten-3">CIF</h4>
+            <v-select  class="border mt-3 rounded"
               variant
               hide-details
               density="compact"
@@ -63,8 +63,8 @@
 
           <v-row class=" d-flex justify-center text-center">
               <v-col cols="6">
-        <h4>ປະເພດບັນຊີ</h4>
-            <v-select  class="border mt-3"
+        <h4 class="text-blue-grey-lighten-3">ປະເພດບັນຊີ</h4>
+            <v-select  class="border mt-3 rounded"
               variant
               hide-details
               density="compact"
@@ -77,8 +77,8 @@
 
           <v-row class=" d-flex justify-center text-center">
               <v-col cols="6">
-        <h4>ສະກຸນເງີນ(Currency)</h4>
-            <v-select  class="border mt-3"
+        <h4 class="text-blue-grey-lighten-3">ສະກຸນເງີນ(Currency)</h4>
+            <v-select  class="border mt-3 rounded"
               variant
               hide-details
               density="compact"
@@ -91,7 +91,7 @@
 
           <v-row class=" d-flex justify-center text-center mb-10">
               <v-col cols="6">
-        <h4>ສະກຸນເງີນ(Currency)</h4>
+        <h4 class="text-blue-grey-lighten-3">ສະກຸນເງີນ(Currency)</h4>
             
             <v-btn 
               elevation="0"
@@ -129,7 +129,7 @@
             </v-col>
 
             <v-col cols="3" >
-<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large" >ຕົກລງ</v-btn>
+<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large" elevation="0" >ຕົກລງ</v-btn>
              </v-col>
           </v-row>
 

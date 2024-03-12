@@ -14,15 +14,15 @@
         </v-row>
 
         <div justify="center" align="center">
-            <v-form @submit.prevent="login">
-                <v-text-field  type="text" v-model="email" variant hide-details class="border rounded mb-5 mt-3" density="compact" required></v-text-field>
-                <v-text-field  type="password" v-model="password" variant hide-details class="border rounded mb-8" density="compact" required></v-text-field>
+       
+                <v-text-field  type="text"  variant hide-details class="border rounded mb-5 mt-3" density="compact" required></v-text-field>
+                <v-text-field  type="password"  variant hide-details class="border rounded mb-8" density="compact" required></v-text-field>
                 <v-btn size="large" 
                  rounded
               elevation="0"
               type="submit"
-              class="text-white bg-light-blue-accent-4 font-weight-bold " style="letter-spacing: 0px;">ເຂົ້າສູ່ລະບົບ</v-btn>
-        </v-form>
+              class="text-white bg-light-blue-accent-4 font-weight-bold " @click="login()" style="letter-spacing: 0px;">ເຂົ້າສູ່ລະບົບ</v-btn>
+
                 
             </div>
     </v-container>
@@ -31,28 +31,82 @@
 </template>
 
 <script>
+import axios from 'axios';
+import {ref , onMounted } from 'vue';
+/* import { useAuthStore} from '../stores/auth' */
+
+
 export default {
-    data(){
-            return{
-                email:'',
-                password:'',
+  data(){
+    return {
 
-            }
-    },
+    }
+  },
 
-    methods: {
-        login(){
-            if(this.email === "admin" && this.password === "123456"){
-                this.$router.push("/sidebar_navbar")
-            }
-            else{
-                console.log('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
-            }
-        },
+  methods: {
+        login() {
 
-       
-    },
+axios.post('149.129.55.90:5050/autherize/login')
+.then((res) => {
+  console.log('data :' ,res.data)
+}).catch((err) => {
+  console.log('error :' , err)
+})
+        }
+  }
 }
+
+
+
+
+
+/* const user = ref({
+    username:"",
+    password:"",
+})
+const userData = async () => {
+ await axios.post('149.129.55.90:5050/autherize/login')
+    .then((response) => {
+      console.log('response:' , response.data);
+      response.data.username = user.username;
+      response.data.password = user.password;
+    })
+    .catch((err) => {
+        console.log("error:" , err)
+    })
+}  */
+
+
+
+/* const user = ref({
+    username:"",
+    password:"",
+})
+const userData = async () => {
+  try {
+    const response = await axios.post('149.129.55.90:5050/autherize/login', {
+      auth: {
+        username: user.value.username,
+        password: user.value.password,
+      },
+    });
+    console.log('response: ', response.data);
+  } catch (error) {
+    console.error('error: ', error);
+  }
+}; */
+
+
+/* const authStore = useAuthStore();
+
+const user = ref();
+onMounted( async () => {
+
+await authStore.getUser
+
+}) */
+
+
 
 </script>
 

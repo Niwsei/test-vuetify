@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import sidebar_navbar from '../components/sidebar_navbar.vue'
+import Home from '../views/Home.vue'
 
 /* management */
 import Department from '../management/Department.vue'
@@ -41,24 +42,24 @@ import NotifyCustomerAccountInformation from '../notice/NotifyCustomerAccountInf
 
 
 
-/* login */
-// import login from '../views/login.vue'
+ /* login */
+ import login from '../views/login.vue'
 
 
 
 const routes = [
-  /* management */
-  //  {
-  //    path: '/',
-  //    name: 'login',
-  //   component: login
-  //  }, 
+  // /* management */
+   {
+     path: '/login',
+     name: 'login',
+    component: login
+   }, 
 
-  // {
-  //   path: '/',
-  //   name: 'sidebar_navbar',
-  //   component:sidebar_navbar
-  // },
+  {
+    path: '/',
+    name: 'Home',
+    component:Home
+  },
  
   {
     path: '/Department',

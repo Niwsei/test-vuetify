@@ -3,7 +3,7 @@
     <v-row align="center" justify="center">
       <v-col cols="12" sm="10">
         <v-card elevation="6" class="mt-10">
-          <v-window v-model="step">
+          <v-window>
             <v-window-item :value="1">
               <v-row>
                 <v-col cols="12" sm="6">
@@ -42,24 +42,9 @@
 </template>
 
 <script >
-export default {
-  data: () => ({
 
-step:1,
-
-  }),
-  propos:{
-    source:String
-  }
-}
 </script>
 
 <style lang="scss" scoped>
 
-.v-appication .rounded-bl-xl {
-  border-bottom-left-radius: 30px !important;
-}
-.v-appication .rounded-br-xl {
-  border-bottom-right-radius:30px !important;
-}
 </style>

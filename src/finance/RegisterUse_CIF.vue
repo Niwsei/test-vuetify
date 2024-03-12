@@ -13,33 +13,38 @@
         </v-btn>
       </v-sheet>
 
+      <hr color="#ECEFF1">
+
       <v-sheet>
-        <v-card class="d-flex align-center flex-column border" height="320px" elevation="0">
-          <v-sheet class="d-flex align-center flex-column" width="1100px">
-            <h4 class="mt-5">ລະຫັດເລກຕົວເເທນ(CIF)</h4>
-            <v-sheet
-              class="w-50 border border-5 d-flex justify-center align-center mt-3 mb-5"
-              ><span class="font-weight-black text-h5 py-2">0001</span></v-sheet
+        <v-card class="d-flex align-center flex-column border" height="auto" elevation="0">
+          <v-container>
+          <v-sheet class="d-flex align-center flex-column w-100">
+            <h4 class="mt-5 text-blue-grey-lighten-3">ລະຫັດເລກຕົວເເທນ(CIF)</h4>
+            <v-sheet 
+              class="w-50 border border-5 d-flex justify-center align-center mt-3 mb-5 rounded"
+              ><span class="font-weight-black text-h5 py-2 ">0001</span></v-sheet
             >
 
-            <h4>ຂໍ້ມູນລູກຄ້າ</h4>
+            <h4 class="text-blue-grey-lighten-3">ຂໍ້ມູນລູກຄ້າ</h4>
             <v-text-field
+            
             density="comfortable"
             hide-details
               type="text"
-              class="w-100 border mt-3 mb-7"
-              height="50px"
+              class="w-100 border mt-3 mb-7 rounded"
               variant
             ></v-text-field>
             <v-btn crounded
+            style="letter-spacing:0px;"
               elevation="0"
               text="submit"
               type="submit"
               size="large"
-              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-100"
-              >ສ້າງເລກຕົວເເທນລູກຄ້າ</v-btn
+              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3 w-100 "
+              ><h3 class="font-weight-regular ">ສ້າງເລກຕົວເເທນລູກຄ້າ</h3></v-btn
             >
           </v-sheet>
+        </v-container>
         </v-card>
       </v-sheet>
 
@@ -64,7 +69,7 @@
             </v-col>
 
             <v-col cols="3" >
-<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large" >ຕົກລງ</v-btn>
+<v-btn class=" ml-5 bg-green-accent-4 text-grey-lighten-5" size="large"  elevation="0">ຕົກລງ</v-btn>
              </v-col>
           </v-row>
 

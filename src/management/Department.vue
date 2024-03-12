@@ -11,23 +11,27 @@
         <v-form validate-on="submit lazy" @submit.prevent="submitForm">
           <v-text-field
             v-model.trim="forms.name"
-            class="border border-1 border-deep-purple-lighten-2"
+            class="border border-1 border-deep-purple-lighten-2 rounded mt-2"
             variant
             density="compact"
             hide-details
           ></v-text-field>
           <div class="d-flex justify-end px-10 py-10">
-            <v-btn
+            <v-hover v-slot="{isHovering , props}" >  <!-- open-delay="500" close-delay="500" -->
+ 
+            <v-btn  v-bind="props"   :color="isHovering ? 'deep-orange-accent-3' : 'deep-orange-accent-3' " 
               rounded
               elevation="0"
               text="submit"
               type="submit"
               size="large"
-              class="text-blue-grey-lighten-5 bg-deep-orange-accent-3"
               active-class="actives"
+              style="letter-spacing: -0.1px"
             >
               ສ້າງພະເເນກ
             </v-btn>
+
+          </v-hover>
           </div>
         </v-form>
       </v-card-text>
@@ -36,10 +40,11 @@
     <!-- table -->
     <v-card height="auto" class="mt-15 " elevation="0">
       <v-container>
-    <v-table class="mt-15 border border-left-0 border-right-none" theme="">
+        
+    <v-table class="mt-15 " theme="">
       <thead>
         <tr>
-          <th class="text-left font-weight-bold pl-15">ເລກທີ</th>
+          <th  class="text-left font-weight-bold pl-15">ເລກທີ</th>
           <th class="text-left font-weight-bold pl-15">ພະເເນກ</th>
           <th class="text-left"></th>
         </tr>
@@ -215,6 +220,32 @@ export default {
  
   },
 };
+</script>
+
+
+<script setup>
+import { ref } from 'vue';
+import axios from 'axios';
+import router from '../router';
+
+
+const total = ref({
+  name:''
+})
+
+const inset_teable = async () => {
+  await axios.get(`${import.meta.env.VITE_API}/masterdata/depart/add` , {
+   "name":total.value.name
+  })
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+} 
+
+
 </script>
 
 <style scoped>
