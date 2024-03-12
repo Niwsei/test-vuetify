@@ -15,8 +15,8 @@
 
         <div justify="center" align="center">
        
-                <v-text-field  type="text"  variant hide-details class="border rounded mb-5 mt-3" density="compact" required></v-text-field>
-                <v-text-field  type="password"  variant hide-details class="border rounded mb-8" density="compact" required></v-text-field>
+                <v-text-field  type="text" v-model="email" variant hide-details class="border rounded mb-5 mt-3" density="compact" required></v-text-field>
+                <v-text-field  type="password" v-model="password" variant hide-details class="border rounded mb-8" density="compact" required></v-text-field>
                 <v-btn size="large" 
                  rounded
               elevation="0"
@@ -39,20 +39,25 @@ import {ref , onMounted } from 'vue';
 export default {
   data(){
     return {
-
+          email:'',
+          password:'',
     }
   },
 
   methods: {
         login() {
 
-axios.post('149.129.55.90:5050/autherize/login')
+          if( this.email != '' || this.password){
+            axios.post('http://149.129.55.90:5050/autherize/login' ,{ user_name:this.email , user_password:this.password})
 .then((res) => {
   console.log('data :' ,res.data)
 }).catch((err) => {
   console.log('error :' , err)
 })
         }
+          }
+
+
   }
 }
 

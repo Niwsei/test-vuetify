@@ -3,20 +3,28 @@ import axios from 'axios'
 
 export const useAuthStore = defineStore("auth" , {
     state: () => ({
-        authUser:null
+        token:null,
+        user:null
     }),
     getters: {
-user:(state) => state.authUser
+            get_token:(state) => state.token,
+            get_user:(state) => state.user
     },
     actions: {
-        async getToken() {
-            await axios.get("sanctum/csrf-cookie");
+        set_token(new_token){
+                this.token = new_token;
         },
 
-        async getUser() {
-            this.getToken()
-            const userData = await axios.get('149.129.55.90:5050/autherize/login')
-            this.authUser = userData.data
+        set_user(new_user){
+            this.user = new_user;
+        },
+
+        remove_token(){
+            this.token = null;
+        },
+
+        remove_user(){
+            this.user = null;
         }
     }
 })
