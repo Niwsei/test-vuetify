@@ -52,9 +52,9 @@
 
 
       <tbody>
-        <tr v-for="(item, index) in dessert" :key="index">
-          <td>{{ index }}</td>
-          <td>{{ item.name }}</td>
+        <tr v-for=" item in depart" :key="item.depart_id">
+          <td>{{ item.depart_id }}</td>
+          <td>{{ item.depart_name }}</td>
           <td>
             <v-menu>
               <template v-slot:activator="{ props }">
@@ -163,12 +163,17 @@
 </template>
 
 <script>
+import axios from 'axios';
+import { useAuthStore } from '../stores/auth';
 // import test from '../alert/test.vue'
 export default {
   // components:{test},
 
   data() {
     return {
+
+      department:'',
+      depart: [],
    
       dessert: [
         {
@@ -197,6 +202,13 @@ export default {
       employee: [],
     };
   },
+
+setup() {
+ const store = useAuthStore();
+ return{store};
+},
+
+
   methods: {
     //  oninput(event) {
     //  this.name = event.target.value;
@@ -217,36 +229,58 @@ export default {
         })
       },
 
+      addUser(){
+
+
+        try {
+
+          axios.post('http://149.129.55.90:5050/depart/add' , {depart_name:this.department} ,  {headers: { 'authorization':`Bearer ${this.store.get_token}`}})
+            
+        }
+        catch {
+
+        }
+      },
+
+   
+
+ 
+
+
+ 
+      showDepartments(){
+
+      const config = {
+      headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXBhcnRfaWQiOjEsImlhdCI6MTcwNzcxODEzOX0.WSTmWd8xs5Tz3H65Do2JX-5QnEKBqmLszvSJvV0xNSk` }
+      };
+      axios.post( 
+      'http://149.129.55.90:5050/masterdata/depart/get',
+      config
+      ).then(console.log).catch(console.log);
+
+        // axios.post('http://149.129.55.90:5050/masterdata/depart/get' , 
+        //  {headers: {Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXBhcnRfaWQiOjEsImlhdCI6MTcwNzcxODEzOX0.WSTmWd8xs5Tz3H65Do2JX-5QnEKBqmLszvSJvV0xNSk"  }})
+        //   .then((res) => {
+        //     /* this.depart = res.data; */
+        //     console.log('data:' , "hello");
+            
+        //   })
+        //   .catch((error) => {
+        //     console.log('error:' , error)
+        //   })
+
+
+      }
+
  
   },
+
+  created(){
+    this.showDepartments();
+  }
 };
 </script>
 
-
-<script setup>
-import { ref } from 'vue';
-import axios from 'axios';
-import router from '../router';
-
-
-const total = ref({
-  name:''
-})
-
-const inset_teable = async () => {
-  await axios.get(`${import.meta.env.VITE_API}/masterdata/depart/add` , {
-   "name":total.value.name
-  })
-  .then((res) => {
-    console.log(res)
-  })
-  .catch((err) => {
-    console.log(err)
-  })
-} 
-
-
-</script>
 
 <style scoped>
 

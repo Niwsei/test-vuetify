@@ -50,7 +50,6 @@ export default {
             axios.post('http://149.129.55.90:5050/autherize/login' ,{ username:this.email , password:this.password })
 .then((res) => {
   if(res.data.resultCode == "OK"){
-  console.log('wwwwwwwwwwwwwwwwwwwwwwwwwwwww:',res.data);
   this.email = '';
   this.password = '';
   localStorage.setItem('web_token' , res.data.accessToken);
